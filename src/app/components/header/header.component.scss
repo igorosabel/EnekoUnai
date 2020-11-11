@@ -1,3 +1,25 @@
-.flex-space{
-	flex: 1 1 auto;
+.toolbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+
+	.toolbar-row {
+		display: flex;
+		justify-content: center;
+		position: relative;
+
+		& > button {
+			position: absolute;
+		}
+
+		.left-button {
+			left: 0;
+		}
+
+		.right-button {
+			right: 0;
+		}
+	}
 }

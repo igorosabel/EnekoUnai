@@ -1,13 +1,11 @@
-<mat-toolbar color="primary">
-	<mat-toolbar-row>
-		<button *ngIf="leftTitle" mat-icon-button [routerLink]="leftUrl">
+<mat-toolbar color="primary" class="toolbar">
+	<mat-toolbar-row class="toolbar-row">
+		<button *ngIf="leftTitle" mat-button [routerLink]="leftUrl" class="left-button">
 			<mat-icon *ngIf="leftIcon">{{leftIcon}}</mat-icon>
 			{{leftTitle}}
 		</button>
-		<span class="flex-space"></span>
 		<span>{{title}}</span>
-		<span class="flex-space"></span>
-		<button *ngIf="rightTitle" mat-icon-button [routerLink]="rightUrl">
+		<button *ngIf="rightTitle" mat-button [routerLink]="rightUrl" class="right-button">
 			<mat-icon *ngIf="rightIcon">{{rightIcon}}</mat-icon>
 			{{rightTitle}}
 		</button>
