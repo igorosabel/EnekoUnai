@@ -1,1 +1,15 @@
-<p>header works!</p>
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<button *ngIf="leftTitle" mat-icon-button [routerLink]="leftUrl">
+			<mat-icon *ngIf="leftIcon">{{leftIcon}}</mat-icon>
+			{{leftTitle}}
+		</button>
+		<span class="flex-space"></span>
+		<span>{{title}}</span>
+		<span class="flex-space"></span>
+		<button *ngIf="rightTitle" mat-icon-button [routerLink]="rightUrl">
+			<mat-icon *ngIf="rightIcon">{{rightIcon}}</mat-icon>
+			{{rightTitle}}
+		</button>
+	</mat-toolbar-row>
+</mat-toolbar>

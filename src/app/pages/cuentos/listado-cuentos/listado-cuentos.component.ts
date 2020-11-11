@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
 	selector: 'app-listado-cuentos',
 	templateUrl: './listado-cuentos.component.html',
-	styleUrls: ['./listado-cuentos.component.scss']
+	styleUrls: []
 })
 export class ListadoCuentosComponent implements OnInit {
 	constructor() {}

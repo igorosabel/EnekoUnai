@@ -1,2 +1,23 @@
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	background-color: #eee;
+}
+
+.card-center {
+	width: 50%;
+	margin: 50px auto;
+	background-color: #fff;
+	display: flex !important;
+	flex-direction: column;
+	height: 500px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.big-button {
+	width: 200px;
+	height: 150px;
+	font-size: 2em;
+}

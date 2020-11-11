@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PAGES, COMPONENTS, PIPES, SERVICES }  from './app.common';
+import { PAGES, COMPONENTS, PIPES, SERVICES, MATERIAL }  from './app.common';
 
 @NgModule({
 	declarations: [
@@ -16,7 +16,8 @@ import { PAGES, COMPONENTS, PIPES, SERVICES }  from './app.common';
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+		...MATERIAL
 	],
 	providers: [
 		...SERVICES
