@@ -18,10 +18,12 @@ export const PAGES: any[] = [
 /**
  * Componentes
  */
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent }     from './components/header/header.component';
+import { MemoryCardComponent } from './components/memory-card/memory-card.component';
 
 export const COMPONENTS: any[] = [
-	HeaderComponent
+	HeaderComponent,
+	MemoryCardComponent
 ];
 
 /**
