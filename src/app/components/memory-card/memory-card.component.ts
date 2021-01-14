@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MemoryCard }               from '../../model/memory-card.class';
 
 @Component({
 	selector: 'app-memory-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./memory-card.component.scss']
 })
 export class MemoryCardComponent implements OnInit {
+	@Input() card: MemoryCard = null;
+
 	constructor() {}
 	ngOnInit(): void {}
 }
