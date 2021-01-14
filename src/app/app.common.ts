@@ -4,11 +4,15 @@
 import { InicioComponent }         from './pages/inicio/inicio.component';
 import { ListadoCuentosComponent } from './pages/cuentos/listado-cuentos/listado-cuentos.component';
 import { ZenaComponent }           from './pages/cuentos/zena/zena.component';
+import { ListadoJuegosComponent }  from './pages/juegos/listado-juegos/listado-juegos.component';
+import { MemoryComponent }         from './pages/juegos/memory/memory.component';
 
 export const PAGES: any[] = [
 	InicioComponent,
 	ListadoCuentosComponent,
-	ZenaComponent
+	ZenaComponent,
+	ListadoJuegosComponent,
+	MemoryComponent
 ];
 
 /**
