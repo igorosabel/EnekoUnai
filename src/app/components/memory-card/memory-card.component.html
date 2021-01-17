@@ -1,3 +1,6 @@
-<div class="card">
-	{{card.name}}
+<div class="card" (click)="show()">
+	<div ngClass="{'hidden:!reveal}">?</div>
+	<div ngClass="{'hidden:reveal}">
+		{{card.name}}
+	</div>
 </div>

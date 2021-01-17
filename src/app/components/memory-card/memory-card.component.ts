@@ -8,7 +8,12 @@ import { MemoryCard }               from '../../model/memory-card.class';
 })
 export class MemoryCardComponent implements OnInit {
 	@Input() card: MemoryCard = null;
+	reveal: boolean = false;
 
 	constructor() {}
 	ngOnInit(): void {}
+	
+	show(): void {
+		this.reveal = !this.reveal;
+	}
 }
