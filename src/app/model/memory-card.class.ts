@@ -1,5 +1,6 @@
 export class MemoryCard {
-	constructor() {
-
-	}
+	constructor(
+		public id: number = null,
+		public name: string = null
+	) {}
 }

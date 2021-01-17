@@ -8,17 +8,43 @@ import { MemoryCard }        from '../../../model/memory-card.class';
 })
 export class MemoryComponent implements OnInit {
 	level: number = null;
-	numCards: number[] = [4, 8, 16];
+	numPeople: number[] = [2, 4, 8];
 	cards: MemoryCard[] = [];
+	people: string[] = [
+		'Aita',
+		'Ama',
+		'Abuela',
+		'Abuelo',
+		'Izeko Amaia',
+		'Amama',
+		'Aitxitxa',
+		'Tia Piti',
+		'Tio Imanol',
+		'Tia Eider',
+		'Tia Itxi'
+	];
+	selectedPeople: number[] = [];
 
 	constructor() {}
 	ngOnInit(): void {}
 
+	shuffle(array) {
+		return array.sort(() => Math.random() - 0.5);
+	}
+
 	selectLevel(level: number): void {
 		this.cards = [];
-		for (let i=0; i<this.numCards[level]; i++) {
-			this.cards.push(new MemoryCard());
+		const min = 0;
+		const max = this.people.length;
+		while (this.selectedPeople.length<this.numPeople[level]) {
+			let random = Math.floor(Math.random()*(max-min+1)+min);
+			if (this.selectedPeople.indexOf(random)===-1) {
+				this.cards.push(new MemoryCard(random, this.people[random]));
+				this.cards.push(new MemoryCard(random, this.people[random]));
+				this.selectedPeople.push(random);
+			}
 		}
+		this.cards = this.shuffle(this.cards);
 		this.level = level;
 	}
 }
