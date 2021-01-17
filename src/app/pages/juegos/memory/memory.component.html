@@ -5,5 +5,10 @@
 </mat-card>
 
 <mat-card class="card-center" *ngIf="selectedLevel!==null">
-	<app-memory-card *ngFor="let card of cards" [card]="card"></app-memory-card>
+	<div class="card" *ngFor="let card of cards" (click)="show(card)">
+		<div ngClass="{'hidden':!card.reveal}">?</div>
+		<div ngClass="{'hidden':card.reveal}">
+			{{card.name}}
+		</div>
+	</div>
 </mat-card>

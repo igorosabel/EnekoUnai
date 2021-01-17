@@ -52,4 +52,8 @@ export class MemoryComponent implements OnInit {
 		this.cards = this.shuffle(this.cards);
 		this.selectedLevel = level;
 	}
+
+	show(card: MemoryCard): void {
+		card.reveal = !card.reveal;
+	}
 }
