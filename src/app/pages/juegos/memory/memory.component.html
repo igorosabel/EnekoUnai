@@ -1,11 +1,9 @@
 <app-header [leftUrl]="['/juegos']" leftTitle="Juegos" leftIcon="arrow_back" title="Memory"></app-header>
 
-<mat-card class="card-center" *ngIf="level===null">
-	<button mat-raised-button class="big-button" (click)="selectLevel(0)">Fácil</button>
-	<button mat-raised-button class="big-button" (click)="selectLevel(1)">Medio</button>
-	<button mat-raised-button class="big-button" (click)="selectLevel(2)">Difícil</button>
+<mat-card class="card-center" *ngIf="selectedLevel===null">
+	<button *ngFor="let level of levels" mat-raised-button class="big-button" (click)="selectLevel(level)">{{level.name}}</button>
 </mat-card>
 
-<mat-card class="card-center" *ngIf="level!==null">
+<mat-card class="card-center" *ngIf="selectedLevel!==null">
 	<app-memory-card *ngFor="let card of cards" [card]="card"></app-memory-card>
 </mat-card>
