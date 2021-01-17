@@ -29,6 +29,7 @@ export class MemoryComponent implements OnInit {
 		'Tia Itxi'
 	];
 	selectedPeople: number[] = [];
+	selectedCard: MemoryCard = null;
 
 	constructor() {}
 	ngOnInit(): void {}
@@ -39,13 +40,16 @@ export class MemoryComponent implements OnInit {
 
 	selectLevel(level: MemoryLevel): void {
 		this.cards = [];
-		const min = 0;
-		const max = this.people.length;
+		const min: number = 0;
+		const max: number = this.people.length;
+		let idPerson: number = 0;
 		while (this.selectedPeople.length<level.num) {
 			let random = Math.floor(Math.random()*(max-min+1)+min);
 			if (this.selectedPeople.indexOf(random)===-1) {
-				this.cards.push(new MemoryCard(random, this.people[random]));
-				this.cards.push(new MemoryCard(random, this.people[random]));
+				idPerson++;
+				this.cards.push(new MemoryCard(random, idPerson, this.people[random]));
+				idPerson++;
+				this.cards.push(new MemoryCard(random, idPerson, this.people[random]));
 				this.selectedPeople.push(random);
 			}
 		}

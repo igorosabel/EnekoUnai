@@ -3,6 +3,7 @@ export class MemoryCard {
 
 	constructor(
 		public id: number = null,
+		public idPerson: number = null,
 		public name: string = null
 	) {}
 }
