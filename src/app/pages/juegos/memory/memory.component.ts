@@ -41,7 +41,7 @@ export class MemoryComponent implements OnInit {
 	selectLevel(level: MemoryLevel): void {
 		this.cards = [];
 		const min: number = 0;
-		const max: number = this.people.length;
+		const max: number = this.people.length -1;
 		let idPerson: number = 0;
 		while (this.selectedPeople.length<level.num) {
 			let random = Math.floor(Math.random()*(max-min+1)+min);
