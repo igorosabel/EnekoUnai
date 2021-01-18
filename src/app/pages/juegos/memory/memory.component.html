@@ -4,10 +4,10 @@
 	<button *ngFor="let level of levels" mat-raised-button class="big-button" (click)="selectLevel(level)">{{level.name}}</button>
 </mat-card>
 
-<mat-card class="card-center" *ngIf="selectedLevel!==null">
+<mat-card *ngIf="selectedLevel!==null" class="card-center card-list {{'card-list-'+selectedLevel.num}}">
 	<div class="card" *ngFor="let card of cards" (click)="show(card)">
-		<div ngClass="{'hidden':!card.reveal}">?</div>
-		<div ngClass="{'hidden':card.reveal}">
+		<div class="card-hidden" [ngClass]="{'hidden':card.reveal}">?</div>
+		<div class="card-reveal" [ngClass]="{'hidden':!card.reveal}">
 			{{card.name}}
 		</div>
 	</div>
