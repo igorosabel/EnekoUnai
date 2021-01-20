@@ -30,6 +30,9 @@ export class MemoryComponent implements OnInit {
 	];
 	selectedPeople: number[] = [];
 	selectedCard: MemoryCard = null;
+	selectedSecondCard: MemoryCard = null;
+	blocked: boolean = false;
+	timer: number = null;
 
 	constructor() {}
 	ngOnInit(): void {}
@@ -57,7 +60,46 @@ export class MemoryComponent implements OnInit {
 		this.selectedLevel = level;
 	}
 
+	cardsDone(): void {
+		if (this.timer!==null) {
+			clearTimeout(this.timer);
+		}
+		if (!this.selectedCard.done) {
+			this.selectedCard.reveal = false;
+		}
+		if (!this.selectedSecondCard.done) {
+			this.selectedSecondCard.reveal = false;
+		}
+		this.selectedCard = null;
+		this.selectedSecondCard = null;
+		this.blocked = false;
+	}
+
 	show(card: MemoryCard): void {
-		card.reveal = !card.reveal;
+		if (this.blocked) {
+			return;
+		}
+		if (this.selectedCard===null) {
+			card.reveal = true;
+			this.selectedCard = card;
+		}
+		else {
+			if (this.selectedCard.idPerson===card.idPerson) {
+				return;
+			}
+			this.blocked = true;
+			this.selectedSecondCard = card;
+			this.selectedSecondCard.reveal = true;
+			if (this.selectedCard.id===this.selectedSecondCard.id) {
+				this.selectedCard.done = true;
+				card.done = true;
+				this.cardsDone();
+			}
+			else {
+				this.timer = setTimeout(() => {
+					this.cardsDone()
+				}, 1500);
+			}
+		}
 	}
 }

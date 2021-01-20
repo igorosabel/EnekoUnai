@@ -1,5 +1,6 @@
 export class MemoryCard {
 	public reveal: boolean = false;
+	public done: boolean = false;
 
 	constructor(
 		public id: number = null,
