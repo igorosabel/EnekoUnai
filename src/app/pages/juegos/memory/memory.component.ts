@@ -9,9 +9,9 @@ import { MemoryLevel }       from '../../../interfaces/interfaces';
 })
 export class MemoryComponent implements OnInit {
 	levels: MemoryLevel[] = [
-		{id: 0, name: 'Fácil', num: 2},
-		{id: 1, name: 'Medio', num: 4},
-		{id: 2, name: 'Difícil', num: 8}
+		{id: 0, name: 'Fácil', num: 2, icon: 'easy'},
+		{id: 1, name: 'Medio', num: 4, icon: 'medium'},
+		{id: 2, name: 'Difícil', num: 8, icon: 'hard'}
 	];
 	selectedLevel: MemoryLevel = null;
 	cards: MemoryCard[] = [];
