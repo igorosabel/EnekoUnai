@@ -12,6 +12,7 @@
 		cursor: pointer;
 		align-self: center;
 		justify-self: center;
+		user-select: none;
 
 		& > div {
 			width: 100%;
