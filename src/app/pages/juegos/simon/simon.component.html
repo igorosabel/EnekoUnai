@@ -1,0 +1,25 @@
+<app-header [leftUrl]="['/juegos']" leftTitle="Juegos" leftIcon="arrow_back" title="Simon"></app-header>
+
+<div class="game-grid">
+	<div class="game-row">
+		<div class="game-col">
+			<div class="game-button" id="simon-btn-blue"></div>
+		</div>
+	</div>
+	<div class="game-row">
+		<div class="game-col">
+			<div class="game-button" id="simon-btn-green"></div>
+		</div>
+		<div class="game-col">
+			{{round}}
+		</div>
+		<div class="game-col">
+			<div class="game-button" id="simon-btn-red"></div>
+		</div>
+	</div>
+	<div class="game-row">
+		<div class="game-col">
+			<div class="game-button" id="simon-btn-orange"></div>
+		</div>
+	</div>
+</div>

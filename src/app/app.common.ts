@@ -7,14 +7,16 @@ import { ZenaComponent }           from './pages/cuentos/zena/zena.component';
 import { TomasaComponent }         from './pages/cuentos/tomasa/tomasa.component';
 import { ListadoJuegosComponent }  from './pages/juegos/listado-juegos/listado-juegos.component';
 import { MemoryComponent }         from './pages/juegos/memory/memory.component';
+import { SimonComponent }          from './pages/juegos/simon/simon.component';
 
 export const PAGES: any[] = [
 	InicioComponent,
 	ListadoCuentosComponent,
 	ZenaComponent,
-  TomasaComponent,
+	TomasaComponent,
 	ListadoJuegosComponent,
-	MemoryComponent
+	MemoryComponent,
+	SimonComponent
 ];
 
 /**
