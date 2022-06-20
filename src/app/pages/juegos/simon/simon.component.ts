@@ -8,6 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class SimonComponent implements OnInit {
 	round: number = 1;
 	sounds = {};
+	activated = {
+		red:  false,
+		green: false,
+		blue: false,
+		orange: false
+	};
+	clickable: boolean = true;
+	sequence: string[] = [];
+	humanSequence: string[] = [];
+	level: number = 0;
+	showStart: boolean = true;
+	info: string = '';
+	showInfo:  boolean  = false;
 
 	constructor() {}
 	ngOnInit(): void {
@@ -19,18 +32,13 @@ export class SimonComponent implements OnInit {
 		};
 	}
 
-	sequence = [];
-	humanSequence = [];
-	level: number = 0;
-	showStart: boolean = true;
-	info: string = '';
-
-	resetGame(text): void {
+	resetGame(text: string): void {
 		alert(text);
 		this.sequence = [];
 		this.humanSequence = [];
 		this.level = 0;
 		this.showStart = true;
+		this.showInfo = false;
 	}
 
 	humanTurn(level: number): void {
@@ -38,89 +46,79 @@ export class SimonComponent implements OnInit {
 	}
 
 	activateTile(color: string): void {
-	  const tile = document.querySelector(`[data-tile='${color}']`);
-	  const sound = document.querySelector(`[data-sound='${color}']`);
+		this.sounds[color].play();
+		this.activated[color] = true;
 
-	  tile.classList.add('activated');
-	  sound.play();
-
-	  setTimeout(() => {
-		tile.classList.remove('activated');
-	  }, 300);
-	}
-
-	function playRound(nextSequence) {
-	  nextSequence.forEach((color, index) => {
 		setTimeout(() => {
-		  activateTile(color);
-		}, (index + 1) * 600);
-	  });
+			this.activated[color] = false;
+		}, 300);
 	}
 
-	function nextStep() {
-	  const tiles = ['red', 'green', 'blue', 'yellow'];
-	  const random = tiles[Math.floor(Math.random() * tiles.length)];
-
-	  return random;
+	playRound(nextSequence: string[]): void {
+		nextSequence.forEach((color, index) => {
+			setTimeout(() => {
+				this.activateTile(color);
+			}, (index + 1) * 600);
+		});
 	}
 
-	function nextRound() {
-	  level += 1;
+	nextStep(): string {
+		const tiles = ['red', 'green', 'blue', 'yellow'];
+		const random = tiles[Math.floor(Math.random() * tiles.length)];
 
-	  tileContainer.classList.add('unclickable');
-	  info.textContent = 'Wait for the computer';
-	  heading.textContent = `Level ${level} of 20`;
-
-	  const nextSequence = [...sequence];
-	  nextSequence.push(nextStep());
-	  playRound(nextSequence);
-
-	  sequence = [...nextSequence];
-	  setTimeout(() => {
-		humanTurn(level);
-	  }, level * 600 + 1000);
+		return random;
 	}
 
-	function handleClick(tile) {
-	  const index = humanSequence.push(tile) - 1;
-	  const sound = document.querySelector(`[data-sound='${tile}']`);
-	  sound.play();
+	nextRound() {
+		this.level += 1;
 
-	  const remainingTaps = sequence.length - humanSequence.length;
+		this.clickable = false;
+		this.info = 'Wait for the computer';
 
-	  if (humanSequence[index] !== sequence[index]) {
-		return resetGame('Oops! Game over, you pressed the wrong tile.');
-	  }
+		const nextSequence = [...this.sequence];
+		nextSequence.push(this.nextStep());
+		this.playRound(nextSequence);
 
-	  if (humanSequence.length === sequence.length) {
-		if (humanSequence.length === 20) {
-		  return resetGame('Congrats, You Legend! You completed all the levels');
+		this.sequence = [...nextSequence];
+		setTimeout(() => {
+			this.humanTurn(this.level);
+		}, this.level * 600 + 1000);
+	}
+
+	handleClick(tile: string): void {
+		const index = this.humanSequence.push(tile) - 1;
+		this.sounds[tile].play();
+
+		const remainingTaps = this.sequence.length - this.humanSequence.length;
+
+		if (this.humanSequence[index] !== this.sequence[index]) {
+			this.resetGame('Oops! Game over, you pressed the wrong tile.');
+			return;
 		}
 
-		humanSequence = [];
-		info.textContent = 'Success! Keep going!';
-		setTimeout(() => {
-		  nextRound();
-		}, 1000);
-		return;
-	  }
+		if (this.humanSequence.length === this.sequence.length) {
+			if (this.humanSequence.length === 20) {
+				this.resetGame('Congrats, You Legend! You completed all the levels');
+				return;
+			}
 
-	  info.textContent = `Your turn: ${remainingTaps} Tap${
-		remainingTaps > 1 ? 's' : ''
-	  }`;
+			this.humanSequence = [];
+			this.info = 'Success! Keep going!';
+			setTimeout(() => {
+				this.nextRound();
+			}, 1000);
+			return;
+		}
+
+		this.info = `Your turn: ${remainingTaps} Tap${
+			remainingTaps > 1 ? 's' : ''
+		}`;
 	}
 
-	function startGame() {
-	  startButton.classList.add('hidden');
-	  info.classList.remove('hidden');
-	  tileContainer.classList.remove('unclickable');
-	  nextRound();
+	startGame() {
+		this.showStart = false;
+		this.showInfo = true;
+		this.clickable = true;
+		this.nextRound();
 	}
-
-	startButton.addEventListener('click', startGame);
-	tileContainer.addEventListener('click', event => {
-	  const { tile } = event.target.dataset;
-
-	  if (tile) handleClick(tile);
-	});
 }

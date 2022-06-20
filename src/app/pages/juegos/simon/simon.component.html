@@ -3,23 +3,26 @@
 <div class="game-grid">
 	<div class="game-row">
 		<div class="game-col">
-			<div class="game-button" id="simon-btn-blue"></div>
+			<div class="game-button" id="simon-btn-blue" [ngClass]="{'activated':activated.blue}" (click)="handleClick('blue')"></div>
 		</div>
 	</div>
 	<div class="game-row">
 		<div class="game-col">
-			<div class="game-button" id="simon-btn-green"></div>
+			<div class="game-button" id="simon-btn-green" [ngClass]="{'activated':activated.green}" (click)="handleClick('green')"></div>
 		</div>
 		<div class="game-col">
 			{{round}}
 		</div>
 		<div class="game-col">
-			<div class="game-button" id="simon-btn-red"></div>
+			<div class="game-button" id="simon-btn-red" [ngClass]="{'activated':activated.red}" (click)="handleClick('red')"></div>
 		</div>
 	</div>
 	<div class="game-row">
 		<div class="game-col">
-			<div class="game-button" id="simon-btn-orange"></div>
+			<div class="game-button" id="simon-btn-orange" [ngClass]="{'activated':activated.orange}" (click)="handleClick('orange')"></div>
 		</div>
 	</div>
 </div>
+
+<button (click)="startGame()">Empezar</button>
+<div class="info">Level {{level}} of 20</div>
