@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from 'src/app/components/header/header.component';
+import { MaterialModule } from 'src/app/modules/material/material.module';
 
 @Component({
-	selector: 'app-listado-cuentos',
-	templateUrl: './listado-cuentos.component.html',
-	styleUrls: []
+  standalone: true,
+  selector: 'app-listado-cuentos',
+  templateUrl: './listado-cuentos.component.html',
+  imports: [MaterialModule, RouterModule, HeaderComponent],
 })
-export class ListadoCuentosComponent implements OnInit {
-	constructor() {}
-	ngOnInit(): void {}
-}
+export default class ListadoCuentosComponent {}

@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { HeaderComponent } from 'src/app/components/header/header.component';
+import { MaterialModule } from 'src/app/modules/material/material.module';
 
 @Component({
-	selector: 'app-zena',
-	templateUrl: './zena.component.html',
-	styleUrls: ['./zena.component.scss']
+  standalone: true,
+  selector: 'app-zena',
+  templateUrl: './zena.component.html',
+  styleUrls: ['./zena.component.scss'],
+  imports: [MaterialModule, HeaderComponent],
 })
-export class ZenaComponent implements OnInit {
-	constructor() {}
-	ngOnInit(): void {}
-}
+export default class ZenaComponent {}

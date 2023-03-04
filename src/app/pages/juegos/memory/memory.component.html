@@ -1,18 +1,31 @@
-<app-header [leftUrl]="['/juegos']" leftTitle="Juegos" leftIcon="arrow_back" title="Memory"></app-header>
+<app-header [leftUrl]="['/juegos']"
+			leftTitle="Juegos"
+			leftIcon="arrow_back"
+			title="Memory"></app-header>
 
-<mat-card class="card-center" *ngIf="selectedLevel===null">
-	<button *ngFor="let level of levels" mat-raised-button class="big-button" (click)="selectLevel(level)">
+<mat-card class="card-center"
+		  *ngIf="selectedLevel===null">
+	<button *ngFor="let level of levels"
+			mat-raised-button
+			class="big-button"
+			(click)="selectLevel(level)">
 		<img src="/assets/memory/{{level.icon}}.png">
 		<br>
 		{{level.name}}
 	</button>
 </mat-card>
 
-<mat-card *ngIf="selectedLevel!==null" class="card-center card-list {{'card-list-'+selectedLevel.num}}">
-	<div class="card" *ngFor="let card of cards" (click)="show(card)">
-		<div class="card-hidden" [ngClass]="{'hidden':card.reveal}">?</div>
-		<div class="card-reveal" [ngClass]="{'hidden':!card.reveal}">
-			<img [src]="'/assets/memory/img/'+card.id+'.png'" [alt]="card.name">
+<mat-card *ngIf="selectedLevel!==null"
+		  class="card-center card-list {{'card-list-'+selectedLevel.num}}">
+	<div class="card"
+		 *ngFor="let card of cards"
+		 (click)="show(card)">
+		<div class="card-hidden"
+			 [ngClass]="{'hidden':card.reveal}">?</div>
+		<div class="card-reveal"
+			 [ngClass]="{'hidden':!card.reveal}">
+			<img [src]="'/assets/memory/img/'+card.id+'.png'"
+				 [alt]="card.name">
 		</div>
 	</div>
 </mat-card>

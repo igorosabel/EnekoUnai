@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { HeaderComponent } from 'src/app/components/header/header.component';
+import { MaterialModule } from 'src/app/modules/material/material.module';
 
 @Component({
+  standalone: true,
   selector: 'app-tomasa',
   templateUrl: './tomasa.component.html',
-  styleUrls: ['./tomasa.component.scss']
+  styleUrls: ['./tomasa.component.scss'],
+  imports: [MaterialModule, HeaderComponent],
 })
-export class TomasaComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export default class TomasaComponent {}

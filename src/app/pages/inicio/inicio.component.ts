@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from 'src/app/components/header/header.component';
+import { MaterialModule } from 'src/app/modules/material/material.module';
 
 @Component({
-	selector: 'app-inicio',
-	templateUrl: './inicio.component.html',
-	styleUrls: []
+  standalone: true,
+  selector: 'app-inicio',
+  templateUrl: './inicio.component.html',
+  imports: [MaterialModule, RouterModule, HeaderComponent],
 })
-export class InicioComponent implements OnInit {
-	constructor() {}
-	ngOnInit(): void {}
-}
+export class InicioComponent {}
