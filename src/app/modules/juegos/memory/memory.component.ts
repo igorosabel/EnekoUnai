@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { HeaderComponent } from 'src/app/components/header/header.component';
 import { MemoryLevel } from 'src/app/interfaces/interfaces';
 import { MemoryCard } from 'src/app/model/memory-card.class';
 import { MaterialModule } from 'src/app/modules/material/material.module';
+import { HeaderComponent } from 'src/app/modules/shared/components/header/header.component';
 
 @Component({
   standalone: true,

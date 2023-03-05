@@ -1,0 +1,23 @@
+.colores {
+    margin: auto;
+    position: fixed;
+    left: 25%;
+    top: calc(50% - 250px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .row {
+        background-color: #fff;
+        padding: 24px;
+        border-radius: 6px;
+
+        label {
+            display: flex;
+
+            span {
+                flex: 1;
+            }
+        }
+    }
+}

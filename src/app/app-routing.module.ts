@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from 'src/app/pages/inicio/inicio.component';
+import { InicioComponent } from 'src/app/modules/inicio/inicio.component';
 
 const routes: Routes = [
   {
@@ -10,29 +10,37 @@ const routes: Routes = [
   {
     path: 'cuentos',
     loadComponent: () =>
-      import('src/app/pages/cuentos/listado-cuentos/listado-cuentos.component'),
+      import(
+        'src/app/modules/cuentos/listado-cuentos/listado-cuentos.component'
+      ),
   },
   {
     path: 'cuentos/zena',
-    loadComponent: () => import('src/app/pages/cuentos/zena/zena.component'),
+    loadComponent: () => import('src/app/modules/cuentos/zena/zena.component'),
   },
   {
     path: 'cuentos/tomasa',
     loadComponent: () =>
-      import('src/app/pages/cuentos/tomasa/tomasa.component'),
+      import('src/app/modules/cuentos/tomasa/tomasa.component'),
   },
   {
     path: 'juegos',
     loadComponent: () =>
-      import('src/app/pages/juegos/listado-juegos/listado-juegos.component'),
+      import('src/app/modules/juegos/listado-juegos/listado-juegos.component'),
   },
   {
     path: 'juegos/memory',
-    loadComponent: () => import('src/app/pages/juegos/memory/memory.component'),
+    loadComponent: () =>
+      import('src/app/modules/juegos/memory/memory.component'),
   },
   {
     path: 'juegos/simon',
-    loadComponent: () => import('src/app/pages/juegos/simon/simon.component'),
+    loadComponent: () => import('src/app/modules/juegos/simon/simon.component'),
+  },
+  {
+    path: 'juegos/koloreak',
+    loadComponent: () =>
+      import('src/app/modules/juegos/koloreak/koloreak.component'),
   },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];

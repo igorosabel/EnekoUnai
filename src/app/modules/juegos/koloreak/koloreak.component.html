@@ -1,0 +1,38 @@
+<app-header [leftUrl]="['/juegos']"
+            leftTitle="Koloreak"
+            leftIcon="arrow_back"
+            title="Koloreak"></app-header>
+
+<mat-card class="card-center colores"
+          [ngStyle]="{'background-color': 'rgb('+colorR+','+colorG+','+colorB+')'}">
+    <div class="row">
+        <label><span>Gorria</span>{{colorR}}</label>
+        <mat-slider min="0"
+                    max="255"
+                    step="1"
+                    value="0">
+            <input matSliderThumb
+                   [(ngModel)]="colorR">
+        </mat-slider>
+    </div>
+    <div class="row">
+        <label><span>Berdea</span>{{colorG}}</label>
+        <mat-slider min="0"
+                    max="255"
+                    step="1"
+                    value="0">
+            <input matSliderThumb
+                   [(ngModel)]="colorG">
+        </mat-slider>
+    </div>
+    <div class="row">
+        <label><span>Urdina</span>{{colorB}}</label>
+        <mat-slider min="0"
+                    max="255"
+                    step="1"
+                    value="0">
+            <input matSliderThumb
+                   [(ngModel)]="colorB">
+        </mat-slider>
+    </div>
+</mat-card>
