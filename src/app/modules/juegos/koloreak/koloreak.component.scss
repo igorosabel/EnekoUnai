@@ -1,7 +1,7 @@
-.colores {
+.koloreak {
     margin: auto;
     position: fixed;
-    left: 25%;
+    left: 10%;
     top: calc(50% - 250px);
     display: flex;
     flex-direction: column;
@@ -19,5 +19,11 @@
                 flex: 1;
             }
         }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .koloreak {
+        left: 25%;
     }
 }
