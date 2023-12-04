@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/modules/material/material.module';
 
@@ -10,7 +10,7 @@ import { MaterialModule } from 'src/app/modules/material/material.module';
   styleUrls: ['./header.component.scss'],
   imports: [CommonModule, MaterialModule, RouterModule],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input() leftUrl: string[] = [];
   @Input() leftIcon: string = null;
   @Input() leftTitle: string = null;
@@ -18,7 +18,4 @@ export class HeaderComponent implements OnInit {
   @Input() rightUrl: string[] = [];
   @Input() rightIcon: string = null;
   @Input() rightTitle: string = null;
-
-  constructor() {}
-  ngOnInit(): void {}
 }

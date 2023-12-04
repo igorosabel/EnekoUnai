@@ -49,7 +49,7 @@ export default class MemoryComponent {
     const max: number = this.people.length - 1;
     let idPerson: number = 0;
     while (this.selectedPeople.length < level.num) {
-      let random: number = Math.floor(Math.random() * (max - min + 1) + min);
+      const random: number = Math.floor(Math.random() * (max - min + 1) + min);
       if (this.selectedPeople.indexOf(random) === -1) {
         idPerson++;
         this.cards.push(new MemoryCard(random, idPerson, this.people[random]));

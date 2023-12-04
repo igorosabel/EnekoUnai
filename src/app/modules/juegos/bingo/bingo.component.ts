@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,6 +5,6 @@ import { Component } from '@angular/core';
   selector: 'app-bingo',
   templateUrl: './bingo.component.html',
   styleUrls: ['./bingo.component.scss'],
-  imports: [CommonModule],
+  imports: [],
 })
 export class BingoComponent {}

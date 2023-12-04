@@ -1,20 +1,26 @@
 <mat-toolbar color="primary"
 			 class="toolbar">
 	<mat-toolbar-row class="toolbar-row">
-		<button *ngIf="leftTitle"
-				mat-button
+		@if (leftTitle) {
+		<button mat-button
 				[routerLink]="leftUrl"
 				class="left-button">
-			<mat-icon *ngIf="leftIcon">{{leftIcon}}</mat-icon>
+			@if (leftIcon) {
+			<mat-icon>{{leftIcon}}</mat-icon>
+			}
 			{{leftTitle}}
 		</button>
+		}
 		<span>{{title}}</span>
-		<button *ngIf="rightTitle"
-				mat-button
+		@if (rightTitle) {
+		<button mat-button
 				[routerLink]="rightUrl"
 				class="right-button">
-			<mat-icon *ngIf="rightIcon">{{rightIcon}}</mat-icon>
+			@if (rightIcon) {
+			<mat-icon>{{rightIcon}}</mat-icon>
+			}
 			{{rightTitle}}
 		</button>
+		}
 	</mat-toolbar-row>
 </mat-toolbar>
