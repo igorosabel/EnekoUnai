@@ -1,20 +1,14 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from 'src/app/modules/shared/components/header/header.component';
 
 @Component({
+  selector: 'app-metro-inicio',
   standalone: true,
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  imports: [
-    RouterModule,
-    HeaderComponent,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
-  ],
+  templateUrl: './metro-inicio.component.html',
+  styleUrl: './metro-inicio.component.scss',
+  imports: [RouterModule, HeaderComponent, MatCardModule, MatButtonModule],
 })
-export class InicioComponent {}
+export default class MetroInicioComponent {}

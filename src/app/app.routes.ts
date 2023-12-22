@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Route, Routes } from '@angular/router';
 import { InicioComponent } from 'src/app/modules/inicio/inicio.component';
 
 export const routes: Routes = [
@@ -8,38 +8,17 @@ export const routes: Routes = [
   },
   {
     path: 'cuentos',
-    loadComponent: () =>
-      import(
-        'src/app/modules/cuentos/listado-cuentos/listado-cuentos.component'
+    loadChildren: () =>
+      import('src/app/modules/cuentos/cuentos-routes').then(
+        (m): Route[] => m.CUENTOS_ROUTES
       ),
   },
   {
-    path: 'cuentos/zena',
-    loadComponent: () => import('src/app/modules/cuentos/zena/zena.component'),
-  },
-  {
-    path: 'cuentos/tomasa',
-    loadComponent: () =>
-      import('src/app/modules/cuentos/tomasa/tomasa.component'),
-  },
-  {
     path: 'juegos',
-    loadComponent: () =>
-      import('src/app/modules/juegos/listado-juegos/listado-juegos.component'),
-  },
-  {
-    path: 'juegos/memory',
-    loadComponent: () =>
-      import('src/app/modules/juegos/memory/memory.component'),
-  },
-  {
-    path: 'juegos/simon',
-    loadComponent: () => import('src/app/modules/juegos/simon/simon.component'),
-  },
-  {
-    path: 'juegos/koloreak',
-    loadComponent: () =>
-      import('src/app/modules/juegos/koloreak/koloreak.component'),
+    loadChildren: () =>
+      import('src/app/modules/juegos/juegos-routes').then(
+        (m): Route[] => m.JUEGOS_ROUTES
+      ),
   },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];

@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MemoryLevel } from 'src/app/interfaces/interfaces';
 import { MemoryCard } from 'src/app/model/memory-card.class';
-import { MaterialModule } from 'src/app/modules/material/material.module';
 import { HeaderComponent } from 'src/app/modules/shared/components/header/header.component';
 
 @Component({
@@ -10,7 +11,7 @@ import { HeaderComponent } from 'src/app/modules/shared/components/header/header
   selector: 'app-memory',
   templateUrl: './memory.component.html',
   styleUrls: ['./memory.component.scss'],
-  imports: [CommonModule, MaterialModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, MatCardModule, MatButtonModule],
 })
 export default class MemoryComponent {
   levels: MemoryLevel[] = [

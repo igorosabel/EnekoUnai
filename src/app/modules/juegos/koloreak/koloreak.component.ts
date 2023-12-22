@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from 'src/app/modules/material/material.module';
+import { MatCardModule } from '@angular/material/card';
+import { MatSliderModule } from '@angular/material/slider';
 import { HeaderComponent } from 'src/app/modules/shared/components/header/header.component';
 
 @Component({
@@ -9,7 +10,13 @@ import { HeaderComponent } from 'src/app/modules/shared/components/header/header
   selector: 'app-koloreak',
   templateUrl: './koloreak.component.html',
   styleUrls: ['./koloreak.component.scss'],
-  imports: [CommonModule, MaterialModule, FormsModule, HeaderComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    HeaderComponent,
+    MatCardModule,
+    MatSliderModule,
+  ],
 })
 export default class KoloreakComponent {
   colorR: number = 0;
