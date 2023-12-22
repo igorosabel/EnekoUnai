@@ -1,0 +1,13 @@
+<app-header [leftUrl]="['/juegos/metro']"
+            leftTitle="Metro"
+            leftIcon="arrow_back"
+            [title]="title" />
+
+<mat-card class="card-center">
+    @for (linea of lineas; track linea) {
+    <button mat-raised-button
+            class="big-button">
+        Línea {{linea}}
+    </button>
+    }
+</mat-card>

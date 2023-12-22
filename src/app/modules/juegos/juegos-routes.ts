@@ -27,4 +27,11 @@ export const JUEGOS_ROUTES: Route[] = [
         'src/app/modules/juegos/metro/metro-inicio/metro-inicio.component'
       ),
   },
+  {
+    path: 'metro/:ciudad',
+    loadComponent: () =>
+      import(
+        'src/app/modules/juegos/metro/metro-lineas/metro-lineas.component'
+      ),
+  },
 ];

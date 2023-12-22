@@ -8,7 +8,6 @@ import { HeaderComponent } from 'src/app/modules/shared/components/header/header
   selector: 'app-metro-inicio',
   standalone: true,
   templateUrl: './metro-inicio.component.html',
-  styleUrl: './metro-inicio.component.scss',
   imports: [RouterModule, HeaderComponent, MatCardModule, MatButtonModule],
 })
 export default class MetroInicioComponent {}
