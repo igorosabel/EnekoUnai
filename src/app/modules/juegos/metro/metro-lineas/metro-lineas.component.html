@@ -6,8 +6,17 @@
 <mat-card class="card-center">
     @for (linea of lineas; track linea) {
     <button mat-raised-button
-            class="big-button">
-        Línea {{linea}}
+            class="metro-button"
+            [ngStyle]="{'background-color':'#'+linea.color, 'color': '#'+linea.colorTexto}"
+            [routerLink]="'/juegos/metro/'+metroSelected+'/linea/'+linea.num">
+        Línea {{linea.num}}
+        <br>
+        @if (linea.inicio !== linea.fin) {
+        {{linea.inicio}} <br> {{linea.fin}}
+        }
+        @else {
+        {{linea.inicio}}
+        }
     </button>
     }
 </mat-card>

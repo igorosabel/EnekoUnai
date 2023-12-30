@@ -1,0 +1,15 @@
+<app-header [leftUrl]="['/juegos/metro/'+metroSelected]"
+            leftTitle="Metro"
+            leftIcon="arrow_back"
+            [title]="title" />
+
+<mat-card class="card-center">
+    <mat-stepper orientation="vertical"
+                 #stepper>
+        @for (parada of paradas; track parada) {
+        <mat-step>
+            <ng-template matStepLabel>{{parada}}</ng-template>
+        </mat-step>
+        }
+    </mat-stepper>
+</mat-card>
