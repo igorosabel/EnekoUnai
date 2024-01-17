@@ -4,8 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute, Params, RouterModule } from '@angular/router';
 import {
-  MetroCiudadLineaInterface,
   MetroDataInterface,
+  MetroLineaInterface,
 } from 'src/app/interfaces/interfaces';
 import { METRO_DATA } from 'src/app/modules/juegos/metro/metro-data';
 import { HeaderComponent } from 'src/app/modules/shared/components/header/header.component';
@@ -27,7 +27,7 @@ export default class MetroLineasComponent implements OnInit {
   metroData: MetroDataInterface = METRO_DATA;
   metroSelected: string = null;
   title: string = null;
-  lineas: MetroCiudadLineaInterface[] = [];
+  lineas: MetroLineaInterface[] = [];
 
   constructor(private activatedRoute: ActivatedRoute) {}
 

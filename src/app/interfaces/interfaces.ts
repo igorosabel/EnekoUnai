@@ -5,18 +5,33 @@ export interface MemoryLevel {
   icon: string;
 }
 
-export interface MetroCiudadLineaInterface {
+export interface MetroParadaDetalleInterface {
+  num: number;
+  sentido: string;
+  color: string;
+  colorTexto: string;
+  minutos: number;
+}
+
+export interface MetroParadaInterface {
+  id: number;
+  nombre: string;
+  correspondencia: number[];
+}
+
+export interface MetroLineaInterface {
   num: number;
   inicio: string;
   fin: string;
   color: string;
   colorTexto: string;
-  paradas: string[];
+  paradas: number[];
 }
 
 export interface MetroCiudadInterface {
   ciudad: string;
-  lineas: MetroCiudadLineaInterface[];
+  lineas: MetroLineaInterface[];
+  paradas: MetroParadaInterface[];
 }
 
 export interface MetroDataInterface {

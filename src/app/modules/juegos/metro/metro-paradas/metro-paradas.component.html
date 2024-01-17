@@ -4,12 +4,11 @@
             [title]="title" />
 
 <mat-card class="card-center">
-    <mat-stepper orientation="vertical"
-                 #stepper>
-        @for (parada of paradas; track parada) {
-        <mat-step>
-            <ng-template matStepLabel>{{parada}}</ng-template>
-        </mat-step>
-        }
-    </mat-stepper>
+    @for (parada of paradas; track parada) {
+    <button mat-raised-button
+            class="parada-button"
+            [routerLink]="'/juegos/metro/'+metroSelected+'/linea/'+lineaNum+'/parada/'+parada.id">
+        {{parada.nombre}}
+    </button>
+    }
 </mat-card>

@@ -41,4 +41,11 @@ export const JUEGOS_ROUTES: Route[] = [
         'src/app/modules/juegos/metro/metro-paradas/metro-paradas.component'
       ),
   },
+  {
+    path: 'metro/:ciudad/linea/:linea/parada/:parada',
+    loadComponent: () =>
+      import(
+        'src/app/modules/juegos/metro/metro-parada/metro-parada.component'
+      ),
+  },
 ];

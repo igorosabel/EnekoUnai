@@ -1,0 +1,40 @@
+<app-header [leftUrl]="['/juegos/metro/'+metroSelected+'/linea/'+lineaNum]"
+            [leftTitle]="'Linea '+lineaNum"
+            leftIcon="arrow_back"
+            [title]="title" />
+
+@if (correspondenciasInicio.length) {
+<mat-card class="card-paradas">
+    @for (correspondencia of correspondenciasInicio; track correspondencia.num) {
+    <div class="correspondencia">
+        <a class="linea"
+           [ngStyle]="{'background-color':'#'+correspondencia.color, 'color': '#'+correspondencia.colorTexto}"
+           [routerLink]="'/juegos/metro/'+metroSelected+'/linea/'+correspondencia.num">
+            {{correspondencia.num}}
+            {{correspondencia.sentido}}
+        </a>
+        <div class="minutos">
+            {{correspondencia.minutos}} min
+        </div>
+    </div>
+    }
+</mat-card>
+}
+
+@if (correspondenciasFin.length) {
+<mat-card class="card-paradas">
+    @for (correspondencia of correspondenciasFin; track correspondencia.num) {
+    <div class="correspondencia">
+        <a class="linea"
+           [ngStyle]="{'background-color':'#'+correspondencia.color, 'color': '#'+correspondencia.colorTexto}"
+           [routerLink]="'/juegos/metro/'+metroSelected+'/linea/'+correspondencia.num">
+            {{correspondencia.num}}
+            {{correspondencia.sentido}}
+        </a>
+        <div class="minutos">
+            {{correspondencia.minutos}} min
+        </div>
+    </div>
+    }
+</mat-card>
+}

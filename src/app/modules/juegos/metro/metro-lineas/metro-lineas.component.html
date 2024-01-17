@@ -11,7 +11,7 @@
             [routerLink]="'/juegos/metro/'+metroSelected+'/linea/'+linea.num">
         Línea {{linea.num}}
         <br>
-        @if (linea.inicio !== linea.fin) {
+        @if (linea.fin !== null) {
         {{linea.inicio}} <br> {{linea.fin}}
         }
         @else {
