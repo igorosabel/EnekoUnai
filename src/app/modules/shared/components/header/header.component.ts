@@ -1,9 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  InputSignal,
+  OutputEmitterRef,
+  WritableSignal,
+  input,
+  output,
+  signal,
+} from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatOption, MatSelect } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
+import { FamiliaInterface } from 'src/app/interfaces/interfaces';
 
 @Component({
   standalone: true,
@@ -16,14 +27,34 @@ import { RouterModule } from '@angular/router';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatSelect,
+    MatOption,
+    FormsModule,
   ],
 })
 export class HeaderComponent {
-  @Input() leftUrl: string[] = [];
-  @Input() leftIcon: string = null;
-  @Input() leftTitle: string = null;
-  @Input() title: string = 'Eneko y Unai';
-  @Input() rightUrl: string[] = [];
-  @Input() rightIcon: string = null;
-  @Input() rightTitle: string = null;
+  leftUrl: InputSignal<string[]> = input<string[]>([]);
+  leftIcon: InputSignal<string | null> = input<string | null>(null);
+  leftTitle: InputSignal<string | null> = input<string | null>(null);
+  title: InputSignal<string> = input<string>('Eneko y Unai');
+  rightUrl: InputSignal<string[]> = input<string[]>([]);
+  rightIcon: InputSignal<string | null> = input<string | null>(null);
+  rightTitle: InputSignal<string | null> = input<string | null>(null);
+  aukerak: InputSignal<boolean> = input<boolean>(false);
+
+  aukeraAldatu: OutputEmitterRef<number> = output<number>();
+
+  aukeraZerrenda: FamiliaInterface[] = [
+    { id: 1, izena: 'La Casilla' },
+    { id: 2, izena: 'Kirikiño' },
+    { id: 3, izena: 'Salburua' },
+    { id: 4, izena: 'Parlamento' },
+    { id: 5, izena: 'Ziordia' },
+  ];
+
+  aukeratuta: WritableSignal<number> = signal<number>(1);
+
+  aldatuFamilia(): void {
+    this.aukeraAldatu.emit(this.aukeratuta());
+  }
 }

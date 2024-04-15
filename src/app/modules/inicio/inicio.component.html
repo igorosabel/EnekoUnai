@@ -1,7 +1,18 @@
-<app-header />
+<app-header [aukerak]="true"
+			(aukeraAldatu)="zerrendaEguneratu($event)" />
 
 <mat-card class="card-center">
-	<button mat-raised-button
+	@for (p of zerrenda; track p) {
+	<div class="pertsona">
+		<div class="borobila"
+			 [ngStyle]="{'background-color': p.kolorea}">{{p.letra}}</div>
+		<div class="izena"
+			 [ngStyle]="{'color': p.kolorea}">{{p.izena}}</div>
+		<div class="abizena"
+			 [ngStyle]="{'color': p.kolorea}">{{p.abizena}}</div>
+	</div>
+	}
+	<!--button mat-raised-button
 			class="big-button"
 			routerLink="/cuentos/listado">
 		<mat-icon>auto_stories</mat-icon>
@@ -21,5 +32,5 @@
 		<mat-icon>subway</mat-icon>
 		<br>
 		Metro
-	</button>
+	</button-->
 </mat-card>

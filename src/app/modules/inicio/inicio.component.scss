@@ -1,0 +1,29 @@
+.pertsona {
+    margin-bottom: 16px;
+
+    .borobila {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 6em;
+        margin-top: 16px;
+    }
+
+    .izena {
+        text-align: center;
+        margin-top: 16px;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .abizena {
+        text-align: center;
+        margin-top: 16px;
+        font-size: 28px;
+        font-weight: bold;
+    }
+}

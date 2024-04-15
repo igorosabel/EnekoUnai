@@ -1,3 +1,7 @@
+:root {
+	--mat-select-enabled-trigger-text-color: #fff;
+}
+
 html,
 body {
 	height: 100%;
@@ -24,6 +28,7 @@ body {
 	width: 200px;
 	height: 150px !important;
 	font-size: 2em;
+	margin-bottom: 16px;
 }
 
 .button-icon {

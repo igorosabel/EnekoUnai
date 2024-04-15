@@ -1,3 +1,16 @@
+export interface PertsonaInterface {
+  letra: string;
+  izena: string;
+  abizena: string;
+  kolorea: string;
+  familia: number;
+}
+
+export interface FamiliaInterface {
+  id: number;
+  izena: string;
+}
+
 export interface MemoryLevel {
   id: number;
   name: string;

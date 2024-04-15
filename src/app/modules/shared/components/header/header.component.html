@@ -1,26 +1,34 @@
 <mat-toolbar color="primary"
 			 class="toolbar">
 	<mat-toolbar-row class="toolbar-row">
-		@if (leftTitle) {
+		@if (leftTitle()) {
 		<button mat-button
-				[routerLink]="leftUrl"
+				[routerLink]="leftUrl()"
 				class="left-button">
-			@if (leftIcon) {
-			<mat-icon>{{leftIcon}}</mat-icon>
+			@if (leftIcon()) {
+			<mat-icon>{{leftIcon()}}</mat-icon>
 			}
-			{{leftTitle}}
+			{{leftTitle()}}
 		</button>
 		}
-		<span>{{title}}</span>
-		@if (rightTitle) {
+		<span>{{title()}}</span>
+		@if (rightTitle()) {
 		<button mat-button
-				[routerLink]="rightUrl"
+				[routerLink]="rightUrl()"
 				class="right-button">
-			@if (rightIcon) {
-			<mat-icon>{{rightIcon}}</mat-icon>
+			@if (rightIcon()) {
+			<mat-icon>{{rightIcon()}}</mat-icon>
 			}
-			{{rightTitle}}
+			{{rightTitle()}}
 		</button>
+		}
+		@if (aukerak()) {
+		<mat-select [(ngModel)]="aukeratuta"
+					(ngModelChange)="aldatuFamilia()">
+			@for (a of aukeraZerrenda; track a.id) {
+			<mat-option [value]="a.id">{{a.izena}}</mat-option>
+			}
+		</mat-select>
 		}
 	</mat-toolbar-row>
 </mat-toolbar>
