@@ -52,6 +52,13 @@ export class InicioComponent implements OnInit {
       familia: 1,
     },
     {
+      letra: 'B',
+      izena: 'BLANCA',
+      abizena: 'MARTINEZ',
+      kolorea: '#5656ed',
+      familia: 1,
+    },
+    {
       letra: 'E',
       izena: 'EIDER',
       abizena: 'ZUGAZUA',
