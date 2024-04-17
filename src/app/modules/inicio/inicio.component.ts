@@ -28,6 +28,7 @@ export class InicioComponent implements OnInit {
       izena: 'ENEKO',
       abizena: 'GOROSABEL',
       kolorea: '#0000ff',
+      letrak: '#fff',
       familia: 1,
     },
     {
@@ -35,6 +36,7 @@ export class InicioComponent implements OnInit {
       izena: 'UNAI',
       abizena: 'GOROSABEL',
       kolorea: '#0000ff',
+      letrak: '#fff',
       familia: 1,
     },
     {
@@ -42,6 +44,7 @@ export class InicioComponent implements OnInit {
       izena: 'ANA',
       abizena: 'CASANUEVA',
       kolorea: '#28cd1d',
+      letrak: '#fff',
       familia: 1,
     },
     {
@@ -49,6 +52,7 @@ export class InicioComponent implements OnInit {
       izena: 'IÑIGO',
       abizena: 'GOROSABEL',
       kolorea: '#0000ff',
+      letrak: '#fff',
       familia: 1,
     },
     {
@@ -56,6 +60,7 @@ export class InicioComponent implements OnInit {
       izena: 'BLANCA',
       abizena: 'MARTINEZ',
       kolorea: '#5656ed',
+      letrak: '#fff',
       familia: 1,
     },
     {
@@ -63,6 +68,7 @@ export class InicioComponent implements OnInit {
       izena: 'EIDER',
       abizena: 'ZUGAZUA',
       kolorea: '#872dcb',
+      letrak: '#fff',
       familia: 3,
     },
     {
@@ -70,6 +76,7 @@ export class InicioComponent implements OnInit {
       izena: 'IRAIDE',
       abizena: 'GOROSABEL',
       kolorea: '#ff00f7',
+      letrak: '#fff',
       familia: 3,
     },
     {
@@ -77,6 +84,7 @@ export class InicioComponent implements OnInit {
       izena: 'IMANOL',
       abizena: 'GOROSABEL',
       kolorea: '#ff0942',
+      letrak: '#fff',
       familia: 3,
     },
     {
@@ -84,6 +92,7 @@ export class InicioComponent implements OnInit {
       izena: 'PATXI',
       abizena: 'AYASTUY',
       kolorea: '#0000ff',
+      letrak: '#fff',
       familia: 2,
     },
     {
@@ -91,6 +100,7 @@ export class InicioComponent implements OnInit {
       izena: 'AMAIA',
       abizena: 'PIÑEIRO',
       kolorea: '#ff00f7',
+      letrak: '#fff',
       familia: 2,
     },
     {
@@ -98,6 +108,7 @@ export class InicioComponent implements OnInit {
       izena: 'AMAIA',
       abizena: 'CASANUEVA',
       kolorea: '#0000ff',
+      letrak: '#fff',
       familia: 2,
     },
     {
@@ -105,6 +116,7 @@ export class InicioComponent implements OnInit {
       izena: 'ERNESTO',
       abizena: 'GOROSABEL',
       kolorea: '#0000ff',
+      letrak: '#fff',
       familia: 4,
     },
     {
@@ -112,6 +124,7 @@ export class InicioComponent implements OnInit {
       izena: 'TERESA',
       abizena: 'FERNANDEZ',
       kolorea: '#ff00f7',
+      letrak: '#fff',
       familia: 4,
     },
     {
@@ -119,6 +132,7 @@ export class InicioComponent implements OnInit {
       izena: 'PITI',
       abizena: 'FERNANDEZ',
       kolorea: '#0000ff',
+      letrak: '#fff',
       familia: 4,
     },
     {
@@ -126,6 +140,7 @@ export class InicioComponent implements OnInit {
       izena: 'ICIAR',
       abizena: 'GOROSABEL',
       kolorea: '#28cd1d',
+      letrak: '#fff',
       familia: 5,
     },
     {
@@ -133,7 +148,72 @@ export class InicioComponent implements OnInit {
       izena: 'JON',
       abizena: 'URRA',
       kolorea: '#ff0942',
+      letrak: '#fff',
       familia: 5,
+    },
+    {
+      letra: '57',
+      izena: 'MIRIBILLA',
+      abizena: 'BASURTOKO OSPITALEA',
+      kolorea: '#6c6c6c',
+      letrak: '#fff',
+      familia: 6,
+    },
+    {
+      letra: '71',
+      izena: 'MIRIBILLA',
+      abizena: 'SAN IGNAZIO',
+      kolorea: '#ff7b09',
+      letrak: '#000',
+      familia: 6,
+    },
+    {
+      letra: '75',
+      izena: 'SAN ADRIAN',
+      abizena: 'ATXURI',
+      kolorea: '#1cf323',
+      letrak: '#fff',
+      familia: 6,
+    },
+    {
+      letra: '76',
+      izena: 'ARTAZU/XALBADOR',
+      abizena: 'MOYUA',
+      kolorea: '#fbff09',
+      letrak: '#000',
+      familia: 6,
+    },
+    {
+      letra: 'C-1',
+      izena: 'SANTURTZI',
+      abizena: 'BILBAO-ABANDO',
+      kolorea: '#ff0000',
+      letrak: '#fff',
+      familia: 7,
+    },
+    {
+      letra: 'C-2',
+      izena: 'MUSKIZ',
+      abizena: 'BILBAO-ABANDO',
+      kolorea: '#2af91c',
+      letrak: '#fff',
+      familia: 7,
+    },
+    {
+      letra: 'C-3',
+      izena: 'ORDUÑA',
+      abizena: 'BILBAO-ABANDO',
+      kolorea: '#0000ff',
+      letrak: '#fff',
+      familia: 7,
+    },
+    {
+      letra: 'C-4',
+      izena: 'MIRANDA DE EBRO',
+      abizena: 'BILBAO-ABANDO',
+      kolorea: '#ff8d00',
+      letrak: '#fff',
+      familia: 7,
     },
   ];
 

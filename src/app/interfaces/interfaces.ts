@@ -3,6 +3,7 @@ export interface PertsonaInterface {
   izena: string;
   abizena: string;
   kolorea: string;
+  letrak: string;
   familia: number;
 }
 

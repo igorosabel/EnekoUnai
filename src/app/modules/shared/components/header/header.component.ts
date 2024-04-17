@@ -50,6 +50,8 @@ export class HeaderComponent {
     { id: 3, izena: 'Salburua' },
     { id: 4, izena: 'Parlamento' },
     { id: 5, izena: 'Ziordia' },
+    { id: 6, izena: 'Autobusak' },
+    { id: 7, izena: 'Trenak' },
   ];
 
   aukeratuta: WritableSignal<number> = signal<number>(1);
