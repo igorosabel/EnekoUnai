@@ -1,7 +1,7 @@
 import { NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
+import { MatCardContent, MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { PertsonaInterface } from 'src/app/interfaces/interfaces';
@@ -17,6 +17,7 @@ import { HeaderComponent } from 'src/app/modules/shared/components/header/header
     RouterModule,
     HeaderComponent,
     MatCardModule,
+    MatCardContent,
     MatButtonModule,
     MatIconModule,
   ],
@@ -152,6 +153,30 @@ export class InicioComponent implements OnInit {
       familia: 5,
     },
     {
+      letra: '30',
+      izena: 'MIRIBILLA',
+      abizena: 'TXURDINAGA',
+      kolorea: '#9e24b5',
+      letrak: '#fff',
+      familia: 6,
+    },
+    {
+      letra: '40',
+      izena: 'LA PEÑA',
+      abizena: 'AYALA',
+      kolorea: '#fbff09',
+      letrak: '#000',
+      familia: 6,
+    },
+    {
+      letra: '55',
+      izena: 'MIRIBILLA',
+      abizena: 'MINA DEL MORRO',
+      kolorea: '#126614',
+      letrak: '#fff',
+      familia: 6,
+    },
+    {
       letra: '57',
       izena: 'MIRIBILLA',
       abizena: 'BASURTOKO OSPITALEA',
@@ -168,6 +193,14 @@ export class InicioComponent implements OnInit {
       familia: 6,
     },
     {
+      letra: '72',
+      izena: 'LARRASKITU',
+      abizena: 'CASTAÑOS/GAZTELEKU',
+      kolorea: '#ab5d19',
+      letrak: '#fff',
+      familia: 6,
+    },
+    {
       letra: '75',
       izena: 'SAN ADRIAN',
       abizena: 'ATXURI',
@@ -181,6 +214,14 @@ export class InicioComponent implements OnInit {
       abizena: 'MOYUA',
       kolorea: '#fbff09',
       letrak: '#000',
+      familia: 6,
+    },
+    {
+      letra: '77',
+      izena: 'MINA DEL MORRO',
+      abizena: 'PEÑASCAL',
+      kolorea: '#ff36f9',
+      letrak: '#fff',
       familia: 6,
     },
     {
