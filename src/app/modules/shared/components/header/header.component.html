@@ -22,13 +22,5 @@
 			{{rightTitle()}}
 		</button>
 		}
-		@if (aukerak()) {
-		<mat-select [(ngModel)]="aukeratuta"
-					(ngModelChange)="aldatuFamilia()">
-			@for (a of aukeraZerrenda; track a.id) {
-			<mat-option [value]="a.id">{{a.izena}}</mat-option>
-			}
-		</mat-select>
-		}
 	</mat-toolbar-row>
 </mat-toolbar>

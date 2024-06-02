@@ -6,10 +6,10 @@
 @if (selectedLevel === null) {
 <mat-card class="card-center">
 	@for (level of levels; track level.id) {
-	<button mat-raised-button
+	<button mat-flat-button
 			class="big-button"
 			(click)="selectLevel(level)">
-		<img src="/assets/memory/{{level.icon}}.png"
+		<img src="/memory/{{level.icon}}.png"
 			 [alt]="level.name">
 		<br>
 		{{level.name}}
@@ -27,7 +27,7 @@
 			 [ngClass]="{'hidden':card.reveal}">?</div>
 		<div class="card-reveal"
 			 [ngClass]="{'hidden':!card.reveal}">
-			<img [src]="'/assets/memory/img/' + card.id + '.png'"
+			<img [src]="'/memory/img/' + card.id + '.png'"
 				 [alt]="card.name">
 		</div>
 	</div>

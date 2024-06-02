@@ -1,38 +1,30 @@
-<app-header [aukerak]="true"
-			(aukeraAldatu)="zerrendaEguneratu($event)" />
+<app-header />
 
 <mat-card class="card-center">
-	<mat-card-content>
-		@for (p of zerrenda; track p) {
-		<div class="pertsona">
-			<div class="borobila"
-				 [ngStyle]="{'background-color': p.kolorea, 'color': p.letrak}">{{p.letra}}</div>
-			<div class="izena"
-				 [ngStyle]="{'color': p.kolorea}">{{p.izena}}</div>
-			<div class="abizena"
-				 [ngStyle]="{'color': p.kolorea}">{{p.abizena}}</div>
-		</div>
-		}
-		<!--button mat-raised-button
-			class="big-button"
-			routerLink="/cuentos/listado">
-		<mat-icon>auto_stories</mat-icon>
-		<br>
-		Cuentos
-	</button>
-	<button mat-raised-button
-			class="big-button"
-			routerLink="/juegos/listado">
-		<mat-icon>casino</mat-icon>
-		<br>
-		Juegos
-	</button>
-	<button mat-raised-button
-			class="big-button"
-			routerLink="/juegos/metro">
-		<mat-icon>subway</mat-icon>
-		<br>
-		Metro
-	</button-->
+	<mat-card-content class="button-list">
+		<button mat-flat-button
+				class="big-button"
+				routerLink="/cuentos/listado">
+			<mat-icon>auto_stories</mat-icon>
+			Cuentos
+		</button>
+		<button mat-flat-button
+				class="big-button"
+				routerLink="/juegos/listado">
+			<mat-icon>casino</mat-icon>
+			Juegos
+		</button>
+		<button mat-flat-button
+				class="big-button"
+				routerLink="/juegos/metro">
+			<mat-icon>subway</mat-icon>
+			Metro
+		</button>
+		<button mat-flat-button
+				class="big-button"
+				routerLink="/familia">
+			<mat-icon>family_restroom</mat-icon>
+			Familia
+		</button>
 	</mat-card-content>
 </mat-card>

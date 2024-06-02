@@ -20,5 +20,9 @@ export const routes: Routes = [
         (m): Route[] => m.JUEGOS_ROUTES
       ),
   },
+  {
+    path: 'familia',
+    loadComponent: () => import('@modules/familia/familia.component'),
+  },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];

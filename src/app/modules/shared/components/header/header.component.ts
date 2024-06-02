@@ -1,20 +1,9 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  InputSignal,
-  OutputEmitterRef,
-  WritableSignal,
-  input,
-  output,
-  signal,
-} from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, InputSignal, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatOption, MatSelect } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { FamiliaInterface } from '@interfaces/interfaces';
 
 @Component({
   standalone: true,
@@ -27,9 +16,6 @@ import { FamiliaInterface } from '@interfaces/interfaces';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatSelect,
-    MatOption,
-    FormsModule,
   ],
 })
 export default class HeaderComponent {
@@ -40,23 +26,4 @@ export default class HeaderComponent {
   rightUrl: InputSignal<string[]> = input<string[]>([]);
   rightIcon: InputSignal<string | null> = input<string | null>(null);
   rightTitle: InputSignal<string | null> = input<string | null>(null);
-  aukerak: InputSignal<boolean> = input<boolean>(false);
-
-  aukeraAldatu: OutputEmitterRef<number> = output<number>();
-
-  aukeraZerrenda: FamiliaInterface[] = [
-    { id: 1, izena: 'La Casilla' },
-    { id: 2, izena: 'Kirikiño' },
-    { id: 3, izena: 'Salburua' },
-    { id: 4, izena: 'Parlamento' },
-    { id: 5, izena: 'Ziordia' },
-    { id: 6, izena: 'Autobusak' },
-    { id: 7, izena: 'Trenak' },
-  ];
-
-  aukeratuta: WritableSignal<number> = signal<number>(1);
-
-  aldatuFamilia(): void {
-    this.aukeraAldatu.emit(this.aukeratuta());
-  }
 }
