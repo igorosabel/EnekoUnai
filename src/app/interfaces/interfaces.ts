@@ -36,7 +36,7 @@ export interface MetroParadaInterface {
 export interface MetroLineaInterface {
   num: number;
   inicio: string;
-  fin: string;
+  fin: string | null;
   color: string;
   colorTexto: string;
   paradas: number[];
@@ -52,3 +52,21 @@ export interface MetroDataInterface {
   bilbao: MetroCiudadInterface;
   madrid: MetroCiudadInterface;
 }
+
+export type MetroCiudad = 'bilbao' | 'madrid';
+
+export interface SimonSounds {
+  red: HTMLAudioElement | undefined;
+  green: HTMLAudioElement | undefined;
+  blue: HTMLAudioElement | undefined;
+  orange: HTMLAudioElement | undefined;
+}
+
+export interface SimonActivated {
+  red: boolean;
+  green: boolean;
+  blue: boolean;
+  orange: boolean;
+}
+
+export type SimonColor = 'red' | 'green' | 'blue' | 'orange';

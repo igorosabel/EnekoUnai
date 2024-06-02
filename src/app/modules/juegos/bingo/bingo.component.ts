@@ -7,4 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./bingo.component.scss'],
   imports: [],
 })
-export class BingoComponent {}
+export default class BingoComponent {}

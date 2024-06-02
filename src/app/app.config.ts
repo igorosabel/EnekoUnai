@@ -6,7 +6,7 @@ import {
   provideRouter,
   withInMemoryScrolling,
 } from '@angular/router';
-import { routes } from 'src/app/app.routes';
+import { routes } from '@app/app.routes';
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'top',

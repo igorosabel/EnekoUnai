@@ -14,7 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatOption, MatSelect } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { FamiliaInterface } from 'src/app/interfaces/interfaces';
+import { FamiliaInterface } from '@interfaces/interfaces';
 
 @Component({
   standalone: true,
@@ -32,7 +32,7 @@ import { FamiliaInterface } from 'src/app/interfaces/interfaces';
     FormsModule,
   ],
 })
-export class HeaderComponent {
+export default class HeaderComponent {
   leftUrl: InputSignal<string[]> = input<string[]>([]);
   leftIcon: InputSignal<string | null> = input<string | null>(null);
   leftTitle: InputSignal<string | null> = input<string | null>(null);

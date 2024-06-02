@@ -4,48 +4,38 @@ export const JUEGOS_ROUTES: Route[] = [
   {
     path: 'listado',
     loadComponent: () =>
-      import('src/app/modules/juegos/listado-juegos/listado-juegos.component'),
+      import('@modules/juegos/listado-juegos/listado-juegos.component'),
   },
   {
     path: 'memory',
-    loadComponent: () =>
-      import('src/app/modules/juegos/memory/memory.component'),
+    loadComponent: () => import('@modules/juegos/memory/memory.component'),
   },
   {
     path: 'simon',
-    loadComponent: () => import('src/app/modules/juegos/simon/simon.component'),
+    loadComponent: () => import('@modules/juegos/simon/simon.component'),
   },
   {
     path: 'koloreak',
-    loadComponent: () =>
-      import('src/app/modules/juegos/koloreak/koloreak.component'),
+    loadComponent: () => import('@modules/juegos/koloreak/koloreak.component'),
   },
   {
     path: 'metro',
     loadComponent: () =>
-      import(
-        'src/app/modules/juegos/metro/metro-inicio/metro-inicio.component'
-      ),
+      import('@modules/juegos/metro/metro-inicio/metro-inicio.component'),
   },
   {
     path: 'metro/:ciudad',
     loadComponent: () =>
-      import(
-        'src/app/modules/juegos/metro/metro-lineas/metro-lineas.component'
-      ),
+      import('@modules/juegos/metro/metro-lineas/metro-lineas.component'),
   },
   {
     path: 'metro/:ciudad/linea/:num',
     loadComponent: () =>
-      import(
-        'src/app/modules/juegos/metro/metro-paradas/metro-paradas.component'
-      ),
+      import('@modules/juegos/metro/metro-paradas/metro-paradas.component'),
   },
   {
     path: 'metro/:ciudad/linea/:linea/parada/:parada',
     loadComponent: () =>
-      import(
-        'src/app/modules/juegos/metro/metro-parada/metro-parada.component'
-      ),
+      import('@modules/juegos/metro/metro-parada/metro-parada.component'),
   },
 ];

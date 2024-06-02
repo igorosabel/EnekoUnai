@@ -4,8 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardContent, MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-import { PertsonaInterface } from 'src/app/interfaces/interfaces';
-import { HeaderComponent } from 'src/app/modules/shared/components/header/header.component';
+import { PertsonaInterface } from '@interfaces/interfaces';
+import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   standalone: true,
@@ -22,7 +22,7 @@ import { HeaderComponent } from 'src/app/modules/shared/components/header/header
     MatIconModule,
   ],
 })
-export class InicioComponent implements OnInit {
+export default class InicioComponent implements OnInit {
   zerrendaGuztia: PertsonaInterface[] = [
     {
       letra: 'E',

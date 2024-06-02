@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MemoryLevel } from 'src/app/interfaces/interfaces';
-import { MemoryCard } from 'src/app/model/memory-card.class';
-import { HeaderComponent } from 'src/app/modules/shared/components/header/header.component';
+import { MemoryLevel } from '@interfaces/interfaces';
+import MemoryCard from '@model/memory-card.class';
+import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   standalone: true,
@@ -19,7 +19,7 @@ export default class MemoryComponent {
     { id: 1, name: 'Medio', num: 4, icon: 'medium' },
     { id: 2, name: 'Difícil', num: 8, icon: 'hard' },
   ];
-  selectedLevel: MemoryLevel = null;
+  selectedLevel: MemoryLevel | null = null;
   cards: MemoryCard[] = [];
   people: string[] = [
     'Aita',
@@ -35,10 +35,10 @@ export default class MemoryComponent {
     'Tia Itxi',
   ];
   selectedPeople: number[] = [];
-  selectedCard: MemoryCard = null;
-  selectedSecondCard: MemoryCard = null;
+  selectedCard: MemoryCard | null = null;
+  selectedSecondCard: MemoryCard | null = null;
   blocked: boolean = false;
-  timer: number = null;
+  timer: number = 0;
 
   shuffle(array: MemoryCard[]): MemoryCard[] {
     return array.sort((): number => Math.random() - 0.5);
@@ -67,10 +67,10 @@ export default class MemoryComponent {
     if (this.timer !== null) {
       clearTimeout(this.timer);
     }
-    if (!this.selectedCard.done) {
+    if (this.selectedCard !== null && !this.selectedCard.done) {
       this.selectedCard.reveal = false;
     }
-    if (!this.selectedSecondCard.done) {
+    if (this.selectedSecondCard !== null && !this.selectedSecondCard.done) {
       this.selectedSecondCard.reveal = false;
     }
     this.selectedCard = null;

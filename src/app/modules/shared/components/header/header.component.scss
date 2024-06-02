@@ -4,6 +4,8 @@
 	left: 0;
 	width: 100%;
 	z-index: 10;
+	background-color: var(--color-blue) !important;
+	color: var(--color-white) !important;
 
 	.toolbar-row {
 		display: flex;

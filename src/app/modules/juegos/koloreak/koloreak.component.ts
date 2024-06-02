@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatSliderModule } from '@angular/material/slider';
-import { HeaderComponent } from 'src/app/modules/shared/components/header/header.component';
+import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   standalone: true,

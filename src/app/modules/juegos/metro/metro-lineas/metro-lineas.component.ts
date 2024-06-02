@@ -4,11 +4,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute, Params, RouterModule } from '@angular/router';
 import {
+  MetroCiudad,
   MetroDataInterface,
   MetroLineaInterface,
-} from 'src/app/interfaces/interfaces';
-import { METRO_DATA } from 'src/app/modules/juegos/metro/metro-data';
-import { HeaderComponent } from 'src/app/modules/shared/components/header/header.component';
+} from '@interfaces/interfaces';
+import { METRO_DATA } from '@modules/juegos/metro/metro-data';
+import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   selector: 'app-metro-lineas',
@@ -25,17 +26,19 @@ import { HeaderComponent } from 'src/app/modules/shared/components/header/header
 })
 export default class MetroLineasComponent implements OnInit {
   metroData: MetroDataInterface = METRO_DATA;
-  metroSelected: string = null;
-  title: string = null;
+  metroSelected: MetroCiudad | null = null;
+  title: string = '';
   lineas: MetroLineaInterface[] = [];
 
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params): void => {
-      this.metroSelected = params.ciudad;
-      this.title = this.metroData[this.metroSelected].ciudad;
-      this.lineas = this.metroData[this.metroSelected].lineas;
+      this.metroSelected = params['ciudad'];
+      if (this.metroSelected !== null) {
+        this.title = this.metroData[this.metroSelected].ciudad;
+        this.lineas = this.metroData[this.metroSelected].lineas;
+      }
     });
   }
 }
