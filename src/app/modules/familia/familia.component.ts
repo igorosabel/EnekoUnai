@@ -11,7 +11,10 @@ import {
   MatSelect,
 } from '@angular/material/select';
 import { RouterModule } from '@angular/router';
-import { FamiliaInterface, PertsonaInterface } from '@interfaces/interfaces';
+import {
+  FamiliaInterface,
+  PertsonaInterface,
+} from '@interfaces/familia.interfaces';
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({

@@ -1,0 +1,9 @@
+<div class="txartela">
+    <img [src]="'/txartelak/' + txartela().mota?.argazkia + '.webp'"
+         class="txartel-argazkia">
+    <img [src]="'/txartelak/' + txartela().umea?.argazkia + '.webp'"
+         class="ume-argazkia"
+         [ngClass]="{'ume-argazkia-barik': txartela().mota?.id === 1, 'ume-argazkia-bat': txartela().mota?.id === 2, 'ume-argazkia-mugi': txartela().mota?.id === 3}">
+    <span class="ume-izena"
+          [ngClass]="{'ume-izena-barik': txartela().mota?.id === 1, 'ume-izena-bat': txartela().mota?.id === 2, 'ume-izena-mugi': txartela().mota?.id === 3}">{{txartela().umea?.izena}}</span>
+</div>

@@ -1,0 +1,65 @@
+<app-header [leftUrl]="['/']"
+            leftTitle="Inicio"
+            leftIcon="arrow_back"
+            title="Txartelak"
+            class="hide-print" />
+
+<div class="txartel-zerrenda">
+    @for (txartela of txartelak; track txartela.id) {
+    <div class="txartela">
+        <app-txartela [txartela]="txartela" />
+    </div>
+    }
+</div>
+
+<button mat-fab
+        class="gehitu hide-print"
+        (click)="gehitu()">
+    <mat-icon>add</mat-icon>
+</button>
+
+@if (showGehitu()) {
+<div class="bg">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Txartel berria</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field subscriptSizing="dynamic">
+                <mat-label>Aukeratu txartela</mat-label>
+                <mat-select [(ngModel)]="txartelMota"
+                            (ngModelChange)="aldatuTxartela()">
+                    <mat-option [value]="-1">Aukeratu txartela</mat-option>
+                    @for (mota of txartelMotak; track mota.id) {
+                    <mat-option [value]="mota.id">{{mota.mota}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field subscriptSizing="dynamic">
+                <mat-label>Aukeratu umea</mat-label>
+                <mat-select [(ngModel)]="umea"
+                            (ngModelChange)="aldatuTxartela()">
+                    <mat-option [value]="-1">Aukeratu umea</mat-option>
+                    @for (klasea of umeak; track klasea.norena) {
+                    <mat-optgroup [label]="klasea.norena">
+                        @for (umea of klasea.umeak; track umea.id) {
+                        <mat-option [value]="umea.id">{{umea.izena}}</mat-option>
+                        }
+                    </mat-optgroup>
+                    }
+                </mat-select>
+            </mat-form-field>
+            @if (txartelMota !== -1 && umea !== -1) {
+            <app-txartela [txartela]="txartelBerria" />
+            }
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-button
+                    (click)="gehitu()">Itxi</button>
+            <button mat-flat-button
+                    [disabled]="txartelMota === -1 || umea === -1"
+                    (click)="sortu()">Sortu</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+}

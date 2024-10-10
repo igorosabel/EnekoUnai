@@ -1,0 +1,50 @@
+.txartela {
+    width: 380px;
+    margin: 0 auto;
+    position: relative;
+
+    .txartel-argazkia {
+        width: 380px;
+    }
+
+    .ume-argazkia {
+        position: absolute;
+    }
+
+    .ume-argazkia-barik {
+        top: 77px;
+        left: 26px;
+        height: 126px;
+    }
+
+    .ume-argazkia-bat {
+        top: 17px;
+        right: 23px;
+        height: 112px;
+    }
+
+    .ume-argazkia-mugi {
+        top: 20px;
+        left: 37px;
+        height: 111px;
+    }
+
+    .ume-izena {
+        position: absolute;
+    }
+
+    .ume-izena-barik {
+        top: 90px;
+        left: 130px;
+    }
+
+    .ume-izena-bat {
+        top: 95px;
+        left: 20px;
+    }
+
+    .ume-izena-mugi {
+        top: 136px;
+        left: 34px;
+    }
+}

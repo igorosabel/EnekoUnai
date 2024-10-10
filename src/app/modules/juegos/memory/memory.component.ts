@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MemoryLevel } from '@interfaces/interfaces';
+import { MemoryLevel } from '@interfaces/memory.interfaces';
 import MemoryCard from '@model/memory-card.class';
 import HeaderComponent from '@shared/components/header/header.component';
 

@@ -4,7 +4,7 @@ import {
   SimonActivated,
   SimonColor,
   SimonSounds,
-} from '@interfaces/interfaces';
+} from '@interfaces/simon.interfaces';
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({

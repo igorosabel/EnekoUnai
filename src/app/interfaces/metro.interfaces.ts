@@ -1,24 +1,3 @@
-export interface PertsonaInterface {
-  letra: string;
-  izena: string;
-  abizena: string;
-  kolorea: string;
-  letrak: string;
-  familia: number;
-}
-
-export interface FamiliaInterface {
-  id: number;
-  izena: string;
-}
-
-export interface MemoryLevel {
-  id: number;
-  name: string;
-  num: number;
-  icon: string;
-}
-
 export interface MetroParadaDetalleInterface {
   num: number;
   sentido: string;
@@ -54,19 +33,3 @@ export interface MetroDataInterface {
 }
 
 export type MetroCiudad = 'bilbao' | 'madrid';
-
-export interface SimonSounds {
-  red: HTMLAudioElement | undefined;
-  green: HTMLAudioElement | undefined;
-  blue: HTMLAudioElement | undefined;
-  orange: HTMLAudioElement | undefined;
-}
-
-export interface SimonActivated {
-  red: boolean;
-  green: boolean;
-  blue: boolean;
-  orange: boolean;
-}
-
-export type SimonColor = 'red' | 'green' | 'blue' | 'orange';

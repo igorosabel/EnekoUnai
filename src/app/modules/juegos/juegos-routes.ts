@@ -38,4 +38,9 @@ export const JUEGOS_ROUTES: Route[] = [
     loadComponent: () =>
       import('@modules/juegos/metro/metro-parada/metro-parada.component'),
   },
+  {
+    path: 'txartelak',
+    loadComponent: () =>
+      import('@modules/juegos/txartelak/txartelak.component'),
+  },
 ];

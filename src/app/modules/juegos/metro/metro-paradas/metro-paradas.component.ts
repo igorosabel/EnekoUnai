@@ -7,7 +7,7 @@ import {
   MetroDataInterface,
   MetroLineaInterface,
   MetroParadaInterface,
-} from '@interfaces/interfaces';
+} from '@interfaces/metro.interfaces';
 import { METRO_DATA } from '@modules/juegos/metro/metro-data';
 import HeaderComponent from '@shared/components/header/header.component';
 
