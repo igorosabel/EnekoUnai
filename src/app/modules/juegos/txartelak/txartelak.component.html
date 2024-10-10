@@ -7,7 +7,9 @@
 <div class="txartel-zerrenda">
     @for (txartela of txartelak; track txartela.id) {
     <div class="txartela">
-        <app-txartela [txartela]="txartela" />
+        <app-txartela [txartela]="txartela"
+                      [ezabatu]="true"
+                      (kendu)="kenduTxartela($event)" />
     </div>
     }
 </div>
@@ -50,7 +52,8 @@
                 </mat-select>
             </mat-form-field>
             @if (txartelMota !== -1 && umea !== -1) {
-            <app-txartela [txartela]="txartelBerria" />
+            <app-txartela [txartela]="txartelBerria"
+                          [ezabatu]="false" />
             }
         </mat-card-content>
         <mat-card-actions align="end">

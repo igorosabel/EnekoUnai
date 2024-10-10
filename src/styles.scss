@@ -45,3 +45,9 @@ body {
 		min-height: 500px;
 	}
 }
+
+@media print {
+	.hide-print {
+		display: none !important;
+	}
+}

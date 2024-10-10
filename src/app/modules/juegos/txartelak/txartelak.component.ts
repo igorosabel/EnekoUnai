@@ -106,6 +106,12 @@ export default class TxartelakComponent {
     this.txartelMota = -1;
     this.umea = -1;
     this.showGehitu.set(false);
-    console.log(this.txartelak);
+  }
+
+  kenduTxartela(id: number): void {
+    const ind: number = this.txartelak.findIndex(
+      (x: TxartelaInterface): boolean => x.id === id
+    );
+    this.txartelak.splice(ind, 1);
   }
 }
