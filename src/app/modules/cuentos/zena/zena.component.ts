@@ -3,7 +3,6 @@ import { MatCardModule } from '@angular/material/card';
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
-  standalone: true,
   selector: 'app-zena',
   templateUrl: './zena.component.html',
   styleUrls: ['./zena.component.scss'],

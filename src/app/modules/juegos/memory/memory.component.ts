@@ -7,7 +7,6 @@ import MemoryCard from '@model/memory-card.class';
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
-  standalone: true,
   selector: 'app-memory',
   templateUrl: './memory.component.html',
   styleUrls: ['./memory.component.scss'],

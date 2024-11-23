@@ -12,7 +12,6 @@ import { TxartelaInterface } from '@interfaces/txartelak.interfaces';
 
 @Component({
   selector: 'app-txartela',
-  standalone: true,
   imports: [NgClass, MatIcon, MatIconButton],
   templateUrl: './txartela.component.html',
   styleUrl: './txartela.component.scss',

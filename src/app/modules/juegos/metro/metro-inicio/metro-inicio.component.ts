@@ -6,7 +6,6 @@ import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   selector: 'app-metro-inicio',
-  standalone: true,
   templateUrl: './metro-inicio.component.html',
   imports: [RouterModule, HeaderComponent, MatCardModule, MatButtonModule],
 })

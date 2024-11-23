@@ -19,7 +19,6 @@ import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   selector: 'app-familia',
-  standalone: true,
   imports: [
     NgStyle,
     RouterModule,

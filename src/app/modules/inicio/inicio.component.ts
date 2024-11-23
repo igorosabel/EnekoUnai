@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardContent, MatCardModule } from '@angular/material/card';
@@ -7,12 +6,10 @@ import { RouterModule } from '@angular/router';
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
-  standalone: true,
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss'],
   imports: [
-    NgStyle,
     RouterModule,
     HeaderComponent,
     MatCardModule,

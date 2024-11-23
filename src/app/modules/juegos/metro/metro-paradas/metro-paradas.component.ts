@@ -13,7 +13,6 @@ import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   selector: 'app-metro-paradas',
-  standalone: true,
   imports: [HeaderComponent, MatCardModule, MatButtonModule, RouterModule],
   templateUrl: './metro-paradas.component.html',
   styleUrl: './metro-paradas.component.scss',

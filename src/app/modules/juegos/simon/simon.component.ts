@@ -8,7 +8,6 @@ import {
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
-  standalone: true,
   selector: 'app-simon',
   templateUrl: './simon.component.html',
   styleUrls: ['./simon.component.scss'],

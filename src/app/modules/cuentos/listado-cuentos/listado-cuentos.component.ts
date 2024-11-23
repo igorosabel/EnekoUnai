@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
-  standalone: true,
   selector: 'app-listado-cuentos',
   templateUrl: './listado-cuentos.component.html',
   imports: [RouterModule, HeaderComponent, MatCardModule, MatButtonModule],

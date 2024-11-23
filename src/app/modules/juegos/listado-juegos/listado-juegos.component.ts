@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
-  standalone: true,
   selector: 'app-listado-juegos',
   templateUrl: './listado-juegos.component.html',
   imports: [RouterModule, HeaderComponent, MatCardModule, MatButtonModule],

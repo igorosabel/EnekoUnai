@@ -13,7 +13,6 @@ import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   selector: 'app-metro-lineas',
-  standalone: true,
   templateUrl: './metro-lineas.component.html',
   styleUrl: './metro-lineas.component.scss',
   imports: [

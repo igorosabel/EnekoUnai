@@ -14,7 +14,6 @@ import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   selector: 'app-metro-parada',
-  standalone: true,
   imports: [HeaderComponent, MatCardModule, NgStyle, RouterModule],
   templateUrl: './metro-parada.component.html',
   styleUrl: './metro-parada.component.scss',

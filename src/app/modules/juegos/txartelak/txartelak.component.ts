@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButton, MatFabButton } from '@angular/material/button';
@@ -24,7 +23,6 @@ import { TXARTELAK_DATA, UMEAK_DATA } from './txartelak-data';
 
 @Component({
   selector: 'app-txartelak',
-  standalone: true,
   imports: [
     HeaderComponent,
     MatFabButton,
@@ -41,7 +39,6 @@ import { TXARTELAK_DATA, UMEAK_DATA } from './txartelak-data';
     MatOption,
     MatOptgroup,
     MatLabel,
-    NgClass,
     TxartelaComponent,
   ],
   templateUrl: './txartelak.component.html',

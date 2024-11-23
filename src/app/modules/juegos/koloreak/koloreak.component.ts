@@ -6,7 +6,6 @@ import { MatSliderModule } from '@angular/material/slider';
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
-  standalone: true,
   selector: 'app-koloreak',
   templateUrl: './koloreak.component.html',
   styleUrls: ['./koloreak.component.scss'],
