@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, InputSignal, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,13 +8,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-  ],
+  imports: [RouterModule, MatToolbarModule, MatButtonModule, MatIconModule],
 })
 export default class HeaderComponent {
   leftUrl: InputSignal<string[]> = input<string[]>([]);

@@ -24,9 +24,9 @@
 	<div class="card"
 		 (click)="show(card)">
 		<div class="card-hidden"
-			 [ngClass]="{'hidden':card.reveal}">?</div>
+			 [class]="{'hidden': card.reveal}">?</div>
 		<div class="card-reveal"
-			 [ngClass]="{'hidden':!card.reveal}">
+			 [class]="{'hidden': !card.reveal}">
 			<img [src]="'/memory/img/' + card.id + '.png'"
 				 [alt]="card.name">
 		</div>

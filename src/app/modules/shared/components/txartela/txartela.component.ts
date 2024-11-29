@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import {
   Component,
   input,
@@ -12,7 +11,7 @@ import { TxartelaInterface } from '@interfaces/txartelak.interfaces';
 
 @Component({
   selector: 'app-txartela',
-  imports: [NgClass, MatIcon, MatIconButton],
+  imports: [MatIcon, MatIconButton],
   templateUrl: './txartela.component.html',
   styleUrl: './txartela.component.scss',
 })

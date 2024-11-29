@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   SimonActivated,
@@ -11,7 +10,7 @@ import HeaderComponent from '@shared/components/header/header.component';
   selector: 'app-simon',
   templateUrl: './simon.component.html',
   styleUrls: ['./simon.component.scss'],
-  imports: [CommonModule, HeaderComponent],
+  imports: [HeaderComponent],
 })
 export default class SimonComponent {
   round: number = 1;

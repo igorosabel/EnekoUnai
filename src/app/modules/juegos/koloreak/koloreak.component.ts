@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -10,7 +10,7 @@ import HeaderComponent from '@shared/components/header/header.component';
   templateUrl: './koloreak.component.html',
   styleUrls: ['./koloreak.component.scss'],
   imports: [
-    CommonModule,
+    NgStyle,
     FormsModule,
     HeaderComponent,
     MatCardModule,
