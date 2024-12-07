@@ -1,7 +1,9 @@
 <div class="txartela">
      <img [src]="'/txartelak/' + txartela().mota?.argazkia + '.webp'"
-          class="txartel-argazkia">
+          class="txartel-argazkia"
+          alt="Argazkia">
      <img [src]="'/txartelak/' + txartela().umea?.argazkia + '.webp'"
+          alt="Txartela"
           class="ume-argazkia"
           [class]="{'ume-argazkia-barik': txartela().mota?.id === 1, 'ume-argazkia-bat': txartela().mota?.id === 2, 'ume-argazkia-mugi': txartela().mota?.id === 3}">
      <span class="ume-izena"

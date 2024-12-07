@@ -65,7 +65,7 @@ export default class TxartelakComponent {
   }
 
   bilatuUmea(id: number): UmeaInterface | null {
-    for (let klasea of this.umeak) {
+    for (const klasea of this.umeak) {
       const umeaEncontrado: UmeaInterface | undefined = klasea.umeak.find(
         (umea: UmeaInterface): boolean => umea.id === id
       );
