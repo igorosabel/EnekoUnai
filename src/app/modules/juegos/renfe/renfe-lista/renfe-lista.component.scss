@@ -1,0 +1,31 @@
+.nombre-linea {
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 1.3em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+
+    span {
+        flex: 1;
+    }
+
+    img.rotate {
+        transform: rotate(180deg);
+    }
+}
+
+.parada {
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    padding: 16px 16px 16px 32px;
+    border-radius: 6px;
+    font-size: 1.2em;
+}

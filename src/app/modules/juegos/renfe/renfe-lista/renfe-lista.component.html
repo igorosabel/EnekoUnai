@@ -4,4 +4,21 @@
             title="Zerrenda" />
 
 <mat-card class="card-center">
+    <mat-card-content>
+        @for (linea of lineas; track linea.id) {
+        <div class="nombre-linea"
+             [style]="{'background-color': linea.color}"
+             (click)="showLinea(linea.id)">
+            <span>{{linea.nombre}}</span>
+            <img src="/renfe/deploy.svg"
+                 alt="Ireki"
+                 [class]="{'rotate': show[linea.id]}">
+        </div>
+        @if (show[linea.id]) {
+        @for (parada of linea.paradas; track parada) {
+        <div class="parada">{{parada}}</div>
+        }
+        }
+        }
+    </mat-card-content>
 </mat-card>
