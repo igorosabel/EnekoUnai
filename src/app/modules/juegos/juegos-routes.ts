@@ -43,4 +43,19 @@ export const JUEGOS_ROUTES: Route[] = [
     loadComponent: () =>
       import('@modules/juegos/txartelak/txartelak.component'),
   },
+  {
+    path: 'renfe',
+    loadComponent: () =>
+      import('@modules/juegos/renfe/renfe-inicio/renfe-inicio.component'),
+  },
+  {
+    path: 'renfe/elegir',
+    loadComponent: () =>
+      import('@modules/juegos/renfe/renfe-elegir/renfe-elegir.component'),
+  },
+  {
+    path: 'renfe/lista',
+    loadComponent: () =>
+      import('@modules/juegos/renfe/renfe-lista/renfe-lista.component'),
+  },
 ];

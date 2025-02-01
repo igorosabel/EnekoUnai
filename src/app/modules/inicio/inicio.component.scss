@@ -1,4 +1,17 @@
 .button-list {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+
+    .rows {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }

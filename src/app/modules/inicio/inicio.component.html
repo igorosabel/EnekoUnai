@@ -2,35 +2,47 @@
 
 <mat-card class="card-center">
 	<mat-card-content class="button-list">
-		<button mat-flat-button
-				class="big-button"
-				routerLink="/cuentos/listado">
-			<mat-icon>auto_stories</mat-icon>
-			Cuentos
-		</button>
-		<button mat-flat-button
-				class="big-button"
-				routerLink="/juegos/listado">
-			<mat-icon>casino</mat-icon>
-			Juegos
-		</button>
-		<button mat-flat-button
-				class="big-button"
-				routerLink="/juegos/metro">
-			<mat-icon>subway</mat-icon>
-			Metro
-		</button>
-		<button mat-flat-button
-				class="big-button"
-				routerLink="/familia">
-			<mat-icon>family_restroom</mat-icon>
-			Familia
-		</button>
-		<button mat-flat-button
-				class="big-button"
-				routerLink="/juegos/txartelak">
-			<mat-icon>badge</mat-icon>
-			Txartelak
-		</button>
+		<div class="rows">
+			<div class="col">
+				<button mat-flat-button
+						class="big-button"
+						routerLink="/cuentos/listado">
+					<mat-icon>auto_stories</mat-icon>
+					Cuentos
+				</button>
+				<button mat-flat-button
+						class="big-button"
+						routerLink="/juegos/listado">
+					<mat-icon>casino</mat-icon>
+					Juegos
+				</button>
+				<button mat-flat-button
+						class="big-button"
+						routerLink="/juegos/metro">
+					<mat-icon>subway</mat-icon>
+					Metro
+				</button>
+			</div>
+			<div class="col">
+				<button mat-flat-button
+						class="big-button"
+						routerLink="/familia">
+					<mat-icon>family_restroom</mat-icon>
+					Familia
+				</button>
+				<button mat-flat-button
+						class="big-button"
+						routerLink="/juegos/txartelak">
+					<mat-icon>badge</mat-icon>
+					Txartelak
+				</button>
+				<button mat-flat-button
+						class="big-button"
+						routerLink="/juegos/renfe">
+					<mat-icon>train</mat-icon>
+					Renfe
+				</button>
+			</div>
+		</div>
 	</mat-card-content>
 </mat-card>
