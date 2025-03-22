@@ -1,7 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  input,
+  InputSignal,
+  InputSignalWithTransform,
+  numberAttribute,
+  OnInit,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { ActivatedRoute, Params, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import {
   MetroCiudad,
   MetroDataInterface,
@@ -19,38 +26,34 @@ import HeaderComponent from '@shared/components/header/header.component';
 })
 export default class MetroParadasComponent implements OnInit {
   metroData: MetroDataInterface = METRO_DATA;
-  metroSelected: MetroCiudad = 'bilbao';
-  lineaNum: number | null = null;
+  ciudad: InputSignal<MetroCiudad> = input.required<MetroCiudad>();
+  num: InputSignalWithTransform<number, unknown> = input.required({
+    transform: numberAttribute,
+  });
   linea: MetroLineaInterface | null = null;
   title: string = '';
   paradas: MetroParadaInterface[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute) {}
-
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params: Params): void => {
-      this.metroSelected = params['ciudad'];
-      this.lineaNum = parseInt(params['num']);
-      this.title = this.metroData[this.metroSelected].ciudad;
-      const findLinea: MetroLineaInterface | undefined = this.metroData[
-        this.metroSelected
-      ].lineas.find((x: MetroLineaInterface): boolean => {
-        return x.num === this.lineaNum;
-      });
-      if (findLinea !== undefined) {
-        this.linea = findLinea;
-        this.title += ' - Línea ' + this.linea.num;
-        for (const num of this.linea.paradas) {
-          const parada: MetroParadaInterface | undefined = this.metroData[
-            this.metroSelected
-          ].paradas.find((x: MetroParadaInterface): boolean => {
-            return x.id === num;
-          });
-          if (parada !== undefined) {
-            this.paradas.push(parada);
-          }
+    this.title = this.metroData[this.ciudad()].ciudad;
+    const findLinea: MetroLineaInterface | undefined = this.metroData[
+      this.ciudad()
+    ].lineas.find((x: MetroLineaInterface): boolean => {
+      return x.num === this.num();
+    });
+    if (findLinea !== undefined) {
+      this.linea = findLinea;
+      this.title += ' - Línea ' + this.linea.num;
+      for (const num of this.linea.paradas) {
+        const parada: MetroParadaInterface | undefined = this.metroData[
+          this.ciudad()
+        ].paradas.find((x: MetroParadaInterface): boolean => {
+          return x.id === num;
+        });
+        if (parada !== undefined) {
+          this.paradas.push(parada);
         }
       }
-    });
+    }
   }
 }

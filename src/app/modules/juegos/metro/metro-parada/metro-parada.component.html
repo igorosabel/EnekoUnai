@@ -1,5 +1,5 @@
-<app-header [leftUrl]="['/juegos/metro/'+metroSelected+'/linea/'+lineaNum]"
-            [leftTitle]="'Linea '+lineaNum"
+<app-header [leftUrl]="[`/juegos/metro/${ciudad()}/linea/${linea()}`]"
+            [leftTitle]="`Linea ${linea()}`"
             leftIcon="arrow_back"
             [title]="title" />
 
@@ -8,8 +8,8 @@
     @for (correspondencia of correspondenciasInicio; track correspondencia.num) {
     <div class="correspondencia">
         <a class="linea"
-           [ngStyle]="{'background-color':'#'+correspondencia.color, 'color': '#'+correspondencia.colorTexto}"
-           [routerLink]="'/juegos/metro/'+metroSelected+'/linea/'+correspondencia.num">
+           [ngStyle]="{'background-color': '#' + correspondencia.color, 'color': '#' + correspondencia.colorTexto}"
+           [routerLink]="`/juegos/metro/${ciudad()}/linea/${correspondencia.num}`">
             {{correspondencia.num}}
             {{correspondencia.sentido}}
         </a>
@@ -26,8 +26,8 @@
     @for (correspondencia of correspondenciasFin; track correspondencia.num) {
     <div class="correspondencia">
         <a class="linea"
-           [ngStyle]="{'background-color':'#'+correspondencia.color, 'color': '#'+correspondencia.colorTexto}"
-           [routerLink]="'/juegos/metro/'+metroSelected+'/linea/'+correspondencia.num">
+           [ngStyle]="{'background-color': '#' + correspondencia.color, 'color': '#' + correspondencia.colorTexto}"
+           [routerLink]="`/juegos/metro/${ciudad()}/linea/${correspondencia.num}`">
             {{correspondencia.num}}
             {{correspondencia.sentido}}
         </a>

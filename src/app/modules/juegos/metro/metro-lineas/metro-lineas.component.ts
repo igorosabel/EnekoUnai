@@ -1,8 +1,8 @@
 import { NgStyle } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, input, InputSignal, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { ActivatedRoute, Params, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import {
   MetroCiudad,
   MetroDataInterface,
@@ -25,19 +25,17 @@ import HeaderComponent from '@shared/components/header/header.component';
 })
 export default class MetroLineasComponent implements OnInit {
   metroData: MetroDataInterface = METRO_DATA;
-  metroSelected: MetroCiudad | null = null;
+  ciudad: InputSignal<MetroCiudad | undefined> = input<MetroCiudad | undefined>(
+    undefined
+  );
   title: string = '';
   lineas: MetroLineaInterface[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute) {}
-
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params: Params): void => {
-      this.metroSelected = params['ciudad'];
-      if (this.metroSelected !== null) {
-        this.title = this.metroData[this.metroSelected].ciudad;
-        this.lineas = this.metroData[this.metroSelected].lineas;
-      }
-    });
+    const ciudad: MetroCiudad | undefined = this.ciudad();
+    if (ciudad !== undefined) {
+      this.title = this.metroData[ciudad].ciudad;
+      this.lineas = this.metroData[ciudad].lineas;
+    }
   }
 }

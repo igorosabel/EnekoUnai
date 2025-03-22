@@ -1,4 +1,4 @@
-<app-header [leftUrl]="['/juegos/metro/'+metroSelected]"
+<app-header [leftUrl]="[`/juegos/metro/${ciudad()}`]"
             leftTitle="Metro"
             leftIcon="arrow_back"
             [title]="title" />
@@ -7,7 +7,7 @@
     @for (parada of paradas; track parada) {
     <button mat-flat-button
             class="parada-button"
-            [routerLink]="'/juegos/metro/'+metroSelected+'/linea/'+lineaNum+'/parada/'+parada.id">
+            [routerLink]="`/juegos/metro/${ciudad()}/linea/${num()}/parada/${parada.id}`">
         {{parada.nombre}}
     </button>
     }

@@ -7,8 +7,8 @@
     @for (linea of lineas; track linea) {
     <button mat-flat-button
             class="metro-button"
-            [ngStyle]="{'background-color':'#'+linea.color, 'color': '#'+linea.colorTexto}"
-            [routerLink]="'/juegos/metro/'+metroSelected+'/linea/'+linea.num">
+            [ngStyle]="{'background-color': '#'+linea.color, 'color': '#'+linea.colorTexto}"
+            [routerLink]="`/juegos/metro/${ciudad()}/linea/${linea.num}`">
         Línea {{linea.num}}
         <br>
         @if (linea.fin !== null) {
