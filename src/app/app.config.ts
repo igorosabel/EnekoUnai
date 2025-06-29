@@ -1,5 +1,4 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideAnimations } from '@angular/platform-browser/animations';
 import {
   InMemoryScrollingFeature,
   InMemoryScrollingOptions,
@@ -25,6 +24,5 @@ export const appConfig: ApplicationConfig = {
       withViewTransitions(),
       withComponentInputBinding()
     ),
-    provideAnimations(),
   ],
 };
