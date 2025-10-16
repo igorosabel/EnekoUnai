@@ -1,7 +1,7 @@
 import { Route, Routes } from '@angular/router';
 import InicioComponent from '@modules/inicio/inicio.component';
 
-export const routes: Routes = [
+const routes: Routes = [
   {
     path: '',
     component: InicioComponent,
@@ -9,14 +9,14 @@ export const routes: Routes = [
   {
     path: 'cuentos',
     loadChildren: () =>
-      import('src/app/modules/cuentos/cuentos-routes').then(
+      import('@modules/cuentos/cuentos-routes').then(
         (m): Route[] => m.CUENTOS_ROUTES
       ),
   },
   {
     path: 'juegos',
     loadChildren: () =>
-      import('src/app/modules/juegos/juegos-routes').then(
+      import('@modules/juegos/juegos-routes').then(
         (m): Route[] => m.JUEGOS_ROUTES
       ),
   },
@@ -26,3 +26,5 @@ export const routes: Routes = [
   },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
+
+export default routes;
