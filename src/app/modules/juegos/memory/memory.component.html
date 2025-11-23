@@ -20,7 +20,7 @@
 
 @if (selectedLevel !== null) {
 <mat-card class="card-center card-list {{'card-list-'+selectedLevel.num}}">
-	@for (card of cards; track card.id) {
+	@for (card of cards; track $index) {
 	<div class="card"
 		 (click)="show(card)">
 		<div class="card-hidden"
