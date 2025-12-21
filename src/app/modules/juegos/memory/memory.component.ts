@@ -158,6 +158,8 @@ export default class MemoryComponent {
         title: 'Fin',
         content: '¡Has ganado!',
         ok: 'Continuar',
+      }).subscribe(() => {
+      	this._selectedLevel.set(null);
       });
     }
   }
