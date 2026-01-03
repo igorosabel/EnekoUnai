@@ -1,4 +1,262 @@
 export const METRO_DATA = {
+  tranviavitoria: {
+    ciudad: 'Vitoria-Gasteiz',
+    lineas: [
+      {
+        num: 1,
+        inicio: 'Abetxuko',
+        fin: 'Unibertsitatea',
+        color: '000000',
+        colorTexto: 'ffffff',
+        paradas: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+      },
+      {
+        num: 2,
+        inicio: 'Ibaiondo',
+        fin: 'Salburua',
+        color: '529d26',
+        colorTexto: 'ffffff',
+        paradas: [18, 19, 20, 21, 23, 23, 9, 10, 11, 12, 13, 14, 15, 24, 25, 26, 27, 28],
+      },
+    ],
+    paradas: [
+      {
+        id: 1,
+        nombre: 'Abetxuko',
+        correspondencia: [1],
+      },
+      {
+        id: 2,
+        nombre: 'Kristo',
+        correspondencia: [1],
+      },
+      {
+        id: 3,
+        nombre: 'Kañabenta',
+        correspondencia: [1],
+      },
+      {
+        id: 4,
+        nombre: 'Artapadura',
+        correspondencia: [1],
+      },
+      {
+        id: 5,
+        nombre: 'Arriaga',
+        correspondencia: [1],
+      },
+      {
+        id: 6,
+        nombre: 'Gernikako arbola',
+        correspondencia: [1],
+      },
+      {
+        id: 7,
+        nombre: 'Portal de Foronda',
+        correspondencia: [1],
+      },
+      {
+        id: 8,
+        nombre: 'Intermodal',
+        correspondencia: [1],
+      },
+      {
+        id: 9,
+        nombre: 'Honduras',
+        correspondencia: [1, 2],
+      },
+      {
+        id: 10,
+        nombre: 'Europa',
+        correspondencia: [1, 2],
+      },
+      {
+        id: 11,
+        nombre: 'Sancho El Sabio',
+        correspondencia: [1, 2],
+      },
+      {
+        id: 12,
+        nombre: 'Lovaina',
+        correspondencia: [1, 2],
+      },
+      {
+        id: 13,
+        nombre: 'Parlamento',
+        correspondencia: [1, 2],
+      },
+      {
+        id: 14,
+        nombre: 'Angulema',
+        correspondencia: [1, 2],
+      },
+      {
+        id: 15,
+        nombre: 'Florida',
+        correspondencia: [1, 2],
+      },
+      {
+        id: 16,
+        nombre: 'Hegoalde',
+        correspondencia: [2],
+      },
+      {
+        id: 17,
+        nombre: 'Unibertsitatea',
+        correspondencia: [2],
+      },
+      {
+        id: 18,
+        nombre: 'Ibaiondo',
+        correspondencia: [2],
+      },
+      {
+        id: 19,
+        nombre: 'Landaberde',
+        correspondencia: [2],
+      },
+      {
+        id: 20,
+        nombre: 'Lakuabizkarra',
+        correspondencia: [2],
+      },
+      {
+        id: 21,
+        nombre: 'Wellington',
+        correspondencia: [2],
+      },
+      {
+        id: 22,
+        nombre: 'Txagorritxu',
+        correspondencia: [2],
+      },
+      {
+        id: 23,
+        nombre: 'Euskal Herria',
+        correspondencia: [2],
+      },
+      {
+        id: 24,
+        nombre: 'Santa Luzia',
+        correspondencia: [2],
+      },
+      {
+        id: 25,
+        nombre: 'Iliada',
+        correspondencia: [2],
+      },
+      {
+        id: 26,
+        nombre: 'Nikosia',
+        correspondencia: [2],
+      },
+      {
+        id: 27,
+        nombre: 'La Unión',
+        correspondencia: [2],
+      },
+      {
+        id: 28,
+        nombre: 'Salburua',
+        correspondencia: [2],
+      },
+    ],
+  },
+  tranviabilbao: {
+    ciudad: 'Bilbao',
+    lineas: [
+      {
+        num: 1,
+        inicio: 'La Casilla',
+        fin: 'Bolueta',
+        color: '529d26',
+        colorTexto: 'ffffff',
+        paradas: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+      },
+    ],
+    paradas: [
+      {
+        id: 1,
+        nombre: 'La Casilla',
+        correspondencia: [1],
+      },
+      {
+        id: 2,
+        nombre: 'Basurto',
+        correspondencia: [1],
+      },
+      {
+        id: 3,
+        nombre: 'Ospitalea',
+        correspondencia: [1],
+      },
+      {
+        id: 4,
+        nombre: 'San Mames',
+        correspondencia: [1],
+      },
+      {
+        id: 5,
+        nombre: 'Sabino Arana',
+        correspondencia: [1],
+      },
+      {
+        id: 6,
+        nombre: 'Euskalduna',
+        correspondencia: [1],
+      },
+      {
+        id: 7,
+        nombre: 'Abandoibarra',
+        correspondencia: [1],
+      },
+      {
+        id: 8,
+        nombre: 'Guggenheim',
+        correspondencia: [1],
+      },
+      {
+        id: 9,
+        nombre: 'Uribitarte',
+        correspondencia: [1],
+      },
+      {
+        id: 10,
+        nombre: 'Pío Baroja',
+        correspondencia: [1],
+      },
+      {
+        id: 11,
+        nombre: 'Abando',
+        correspondencia: [1],
+      },
+      {
+        id: 12,
+        nombre: 'Arriaga',
+        correspondencia: [1],
+      },
+      {
+        id: 13,
+        nombre: 'Ribera',
+        correspondencia: [1],
+      },
+      {
+        id: 14,
+        nombre: 'Atxuri',
+        correspondencia: [1],
+      },
+      {
+        id: 15,
+        nombre: 'Abusu',
+        correspondencia: [1],
+      },
+      {
+        id: 16,
+        nombre: 'Bolueta Casilla',
+        correspondencia: [1],
+      },
+    ],
+  },
   bilbao: {
     ciudad: 'Bilbao',
     lineas: [
@@ -9,8 +267,8 @@ export const METRO_DATA = {
         color: 'e74f1e',
         colorTexto: 'ffffff',
         paradas: [
-          34, 45, 42, 26, 13, 21, 14, 4, 3, 31, 19, 6, 25, 27, 8, 17, 28, 36,
-          40, 16, 37, 22, 30, 1, 47, 39, 11, 15, 18,
+          34, 45, 42, 26, 13, 21, 14, 4, 3, 31, 19, 6, 25, 27, 8, 17, 28, 36, 40, 16, 37, 22, 30, 1,
+          47, 39, 11, 15, 18,
         ],
       },
       {
@@ -20,8 +278,8 @@ export const METRO_DATA = {
         color: '000000',
         colorTexto: 'ffffff',
         paradas: [
-          23, 38, 33, 35, 2, 41, 44, 9, 10, 5, 20, 36, 40, 16, 37, 22, 30, 1,
-          47, 39, 11, 15, 18, 7, 12,
+          23, 38, 33, 35, 2, 41, 44, 9, 10, 5, 20, 36, 40, 16, 37, 22, 30, 1, 47, 39, 11, 15, 18, 7,
+          12,
         ],
       },
       {
@@ -286,9 +544,8 @@ export const METRO_DATA = {
         color: '2bb6e6',
         colorTexto: 'ffffff',
         paradas: [
-          172, 33, 55, 177, 227, 219, 85, 16, 69, 196, 108, 42, 223, 95, 217,
-          220, 17, 83, 27, 146, 160, 186, 153, 180, 43, 14, 147, 215, 237, 65,
-          117, 129, 229,
+          172, 33, 55, 177, 227, 219, 85, 16, 69, 196, 108, 42, 223, 95, 217, 220, 17, 83, 27, 146,
+          160, 186, 153, 180, 43, 14, 147, 215, 237, 65, 117, 129, 229,
         ],
       },
       {
@@ -298,8 +555,8 @@ export const METRO_DATA = {
         color: 'eb2f29',
         colorTexto: 'ffffff',
         paradas: [
-          128, 29, 12, 114, 115, 232, 139, 94, 182, 194, 34, 214, 217, 158, 212,
-          152, 203, 191, 46, 69,
+          128, 29, 12, 114, 115, 232, 139, 94, 182, 194, 34, 214, 217, 158, 212, 152, 203, 191, 46,
+          69,
         ],
       },
       {
@@ -308,10 +565,7 @@ export const METRO_DATA = {
         fin: 'Moncloa',
         color: 'fed105',
         colorTexto: '015396',
-        paradas: [
-          238, 206, 239, 57, 101, 8, 133, 72, 162, 80, 131, 217, 44, 178, 234,
-          21, 149,
-        ],
+        paradas: [238, 206, 239, 57, 101, 8, 133, 72, 162, 80, 131, 217, 44, 178, 234, 21, 149],
       },
       {
         num: 4,
@@ -320,8 +574,8 @@ export const METRO_DATA = {
         color: 'a15c2f',
         colorTexto: 'ffffff',
         paradas: [
-          21, 203, 42, 11, 61, 213, 231, 94, 134, 73, 28, 184, 7, 31, 25, 82,
-          47, 142, 209, 166, 100, 138, 172,
+          21, 203, 42, 11, 61, 213, 231, 94, 134, 73, 28, 184, 7, 31, 25, 82, 47, 142, 209, 166,
+          100, 138, 172,
         ],
       },
       {
@@ -331,8 +585,8 @@ export const METRO_DATA = {
         color: '7ac142',
         colorTexto: 'ffffff',
         paradas: [
-          5, 76, 48, 221, 218, 58, 185, 192, 77, 232, 73, 155, 201, 11, 56, 95,
-          158, 119, 188, 2, 175, 144, 225, 159, 241, 49, 87, 15, 81, 45, 53,
+          5, 76, 48, 221, 218, 58, 185, 192, 77, 232, 73, 155, 201, 11, 56, 95, 158, 119, 188, 2,
+          175, 144, 225, 159, 241, 49, 87, 15, 81, 45, 53,
         ],
       },
       {
@@ -342,8 +596,8 @@ export const METRO_DATA = {
         color: '737f86',
         colorTexto: 'ffffff',
         paradas: [
-          183, 189, 13, 137, 126, 51, 159, 157, 179, 226, 133, 20, 145, 160, 64,
-          202, 156, 139, 73, 28, 193, 154, 69, 97, 236, 59, 149, 21,
+          183, 189, 13, 137, 126, 51, 159, 157, 179, 226, 133, 20, 145, 160, 64, 202, 156, 139, 73,
+          28, 193, 154, 69, 97, 236, 59, 149, 21,
         ],
       },
       {
@@ -353,8 +607,8 @@ export const METRO_DATA = {
         color: 'f79727',
         colorTexto: 'ffffff',
         paradas: [
-          104, 98, 110, 207, 123, 67, 38, 84, 127, 204, 216, 92, 26, 185, 36,
-          164, 52, 28, 96, 9, 46, 109, 97, 89, 230, 18, 171, 30, 124, 23, 176,
+          104, 98, 110, 207, 123, 67, 38, 84, 127, 204, 216, 92, 26, 185, 36, 164, 52, 28, 96, 9,
+          46, 109, 97, 89, 230, 18, 171, 30, 124, 23, 176,
         ],
       },
       {
@@ -372,8 +626,8 @@ export const METRO_DATA = {
         color: '9c3293',
         colorTexto: 'ffffff',
         paradas: [
-          161, 148, 99, 37, 233, 177, 74, 174, 60, 63, 68, 28, 155, 182, 107,
-          202, 86, 240, 24, 170, 228, 235, 205, 187, 199, 197, 198, 122, 19,
+          161, 148, 99, 37, 233, 177, 74, 174, 60, 63, 68, 28, 155, 182, 107, 202, 86, 240, 24, 170,
+          228, 235, 205, 187, 199, 197, 198, 122, 19,
         ],
       },
       {
@@ -383,9 +637,8 @@ export const METRO_DATA = {
         color: '015396',
         colorTexto: 'ffffff',
         paradas: [
-          105, 195, 40, 140, 143, 120, 118, 200, 130, 150, 222, 90, 41, 55, 177,
-          71, 211, 154, 96, 11, 223, 178, 183, 125, 39, 53, 62, 32, 70, 111,
-          190,
+          105, 195, 40, 140, 143, 120, 118, 200, 130, 150, 222, 90, 41, 55, 177, 71, 211, 154, 96,
+          11, 223, 178, 183, 125, 39, 53, 62, 32, 70, 111, 190,
         ],
       },
       {
@@ -403,8 +656,8 @@ export const METRO_DATA = {
         color: 'a49901',
         colorTexto: 'ffffff',
         paradas: [
-          190, 168, 6, 169, 224, 151, 181, 103, 141, 135, 102, 167, 91, 165, 22,
-          66, 10, 93, 112, 79, 136, 75, 78, 113, 54, 106, 132, 210,
+          190, 168, 6, 169, 224, 151, 181, 103, 141, 135, 102, 167, 91, 165, 22, 66, 10, 93, 112,
+          79, 136, 75, 78, 113, 54, 106, 132, 210,
         ],
       },
     ],
