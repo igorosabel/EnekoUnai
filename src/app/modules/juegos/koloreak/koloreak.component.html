@@ -4,9 +4,9 @@
             title="Koloreak" />
 
 <mat-card class="card-center koloreak"
-          [ngStyle]="{'background-color': 'rgb(' + colorR + ',' + colorG + ',' + colorB + ')'}">
+          [style]="{'background-color': 'rgb(' + colorR() + ',' + colorG() + ',' + colorB() + ')'}">
     <div class="row">
-        <label><span>Gorria</span>{{colorR}}</label>
+        <label><span>Gorria</span>{{ colorR() }}</label>
         <mat-slider min="0"
                     max="255"
                     step="1"
@@ -16,7 +16,7 @@
         </mat-slider>
     </div>
     <div class="row">
-        <label><span>Berdea</span>{{colorG}}</label>
+        <label><span>Berdea</span>{{ colorG() }}</label>
         <mat-slider min="0"
                     max="255"
                     step="1"
@@ -26,7 +26,7 @@
         </mat-slider>
     </div>
     <div class="row">
-        <label><span>Urdina</span>{{colorB}}</label>
+        <label><span>Urdina</span>{{ colorB() }}</label>
         <mat-slider min="0"
                     max="255"
                     step="1"

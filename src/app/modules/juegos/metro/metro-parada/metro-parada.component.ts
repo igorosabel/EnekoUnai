@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import {
   Component,
   input,
@@ -21,7 +20,7 @@ import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   selector: 'app-metro-parada',
-  imports: [HeaderComponent, MatCardModule, NgStyle, RouterModule],
+  imports: [HeaderComponent, MatCardModule, RouterModule],
   templateUrl: './metro-parada.component.html',
   styleUrl: './metro-parada.component.scss',
 })
@@ -51,11 +50,11 @@ export default class MetroParadaComponent implements OnInit {
       this.title = this.paradaSelected.nombre;
 
       for (const correspondenciaNum of this.paradaSelected.correspondencia) {
-        const linea: MetroLineaInterface | undefined = this.metroData[
-          this.ciudad()
-        ].lineas.find((x: MetroLineaInterface): boolean => {
-          return x.num === correspondenciaNum;
-        });
+        const linea: MetroLineaInterface | undefined = this.metroData[this.ciudad()].lineas.find(
+          (x: MetroLineaInterface): boolean => {
+            return x.num === correspondenciaNum;
+          }
+        );
 
         if (linea !== undefined && this.parada() !== linea.paradas[0]) {
           const correspondenciaInicio: MetroParadaDetalleInterface = {
@@ -68,10 +67,7 @@ export default class MetroParadaComponent implements OnInit {
           this.correspondenciasInicio.push(correspondenciaInicio);
         }
 
-        if (
-          linea !== undefined &&
-          this.parada() !== linea.paradas[linea.paradas.length - 1]
-        ) {
+        if (linea !== undefined && this.parada() !== linea.paradas[linea.paradas.length - 1]) {
           const correspondenciaFin: MetroParadaDetalleInterface = {
             num: linea.num,
             sentido: linea.fin !== null ? linea.fin : linea.inicio,

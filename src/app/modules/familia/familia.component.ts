@@ -1,26 +1,16 @@
-import { NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardContent, MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import {
-  MatFormField,
-  MatLabel,
-  MatOption,
-  MatSelect,
-} from '@angular/material/select';
+import { MatFormField, MatLabel, MatOption, MatSelect } from '@angular/material/select';
 import { RouterModule } from '@angular/router';
-import {
-  FamiliaInterface,
-  PertsonaInterface,
-} from '@interfaces/familia.interfaces';
+import { FamiliaInterface, PertsonaInterface } from '@interfaces/familia.interfaces';
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
   selector: 'app-familia',
   imports: [
-    NgStyle,
     RouterModule,
     HeaderComponent,
     MatCardModule,
@@ -290,10 +280,8 @@ export default class FamiliaComponent implements OnInit {
   }
 
   zerrendaEguneratu(): void {
-    this.zerrenda = this.zerrendaGuztia.filter(
-      (x: PertsonaInterface): boolean => {
-        return x.familia === this.aukeratuta;
-      }
-    );
+    this.zerrenda = this.zerrendaGuztia.filter((x: PertsonaInterface): boolean => {
+      return x.familia === this.aukeratuta;
+    });
   }
 }

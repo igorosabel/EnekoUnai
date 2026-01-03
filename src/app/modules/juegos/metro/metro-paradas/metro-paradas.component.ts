@@ -5,6 +5,8 @@ import {
   InputSignalWithTransform,
   numberAttribute,
   OnInit,
+  signal,
+  WritableSignal,
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -30,30 +32,34 @@ export default class MetroParadasComponent implements OnInit {
   num: InputSignalWithTransform<number, unknown> = input.required({
     transform: numberAttribute,
   });
-  linea: MetroLineaInterface | null = null;
-  title: string = '';
-  paradas: MetroParadaInterface[] = [];
+  linea: WritableSignal<MetroLineaInterface | null> = signal<MetroLineaInterface | null>(null);
+  title: WritableSignal<string> = signal<string>('');
+  paradas: WritableSignal<MetroParadaInterface[]> = signal<MetroParadaInterface[]>([]);
 
   ngOnInit(): void {
-    this.title = this.metroData[this.ciudad()].ciudad;
-    const findLinea: MetroLineaInterface | undefined = this.metroData[
-      this.ciudad()
-    ].lineas.find((x: MetroLineaInterface): boolean => {
-      return x.num === this.num();
-    });
+    this.title.set(this.metroData[this.ciudad()].ciudad);
+    const findLinea: MetroLineaInterface | undefined = this.metroData[this.ciudad()].lineas.find(
+      (x: MetroLineaInterface): boolean => {
+        return x.num === this.num();
+      }
+    );
     if (findLinea !== undefined) {
-      this.linea = findLinea;
-      this.title += ' - Línea ' + this.linea.num;
-      for (const num of this.linea.paradas) {
-        const parada: MetroParadaInterface | undefined = this.metroData[
-          this.ciudad()
-        ].paradas.find((x: MetroParadaInterface): boolean => {
-          return x.id === num;
-        });
+      this.linea.set(findLinea);
+      this.title.update((title: string): string => {
+        return title + ' - Línea ' + this.linea()!.num;
+      });
+      const paradas: MetroParadaInterface[] = [];
+      for (const num of this.linea()!.paradas) {
+        const parada: MetroParadaInterface | undefined = this.metroData[this.ciudad()].paradas.find(
+          (x: MetroParadaInterface): boolean => {
+            return x.id === num;
+          }
+        );
         if (parada !== undefined) {
-          this.paradas.push(parada);
+          paradas.push(parada);
         }
       }
+      this.paradas.set(paradas);
     }
   }
 }

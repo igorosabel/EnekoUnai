@@ -8,7 +8,7 @@
     @for (correspondencia of correspondenciasInicio; track correspondencia.num) {
     <div class="correspondencia">
         <a class="linea"
-           [ngStyle]="{'background-color': '#' + correspondencia.color, 'color': '#' + correspondencia.colorTexto}"
+           [style]="{'background-color': '#' + correspondencia.color, 'color': '#' + correspondencia.colorTexto}"
            [routerLink]="`/juegos/metro/${ciudad()}/linea/${correspondencia.num}`">
             {{correspondencia.num}}
             {{correspondencia.sentido}}
@@ -26,7 +26,7 @@
     @for (correspondencia of correspondenciasFin; track correspondencia.num) {
     <div class="correspondencia">
         <a class="linea"
-           [ngStyle]="{'background-color': '#' + correspondencia.color, 'color': '#' + correspondencia.colorTexto}"
+           [style]="{'background-color': '#' + correspondencia.color, 'color': '#' + correspondencia.colorTexto}"
            [routerLink]="`/juegos/metro/${ciudad()}/linea/${correspondencia.num}`">
             {{correspondencia.num}}
             {{correspondencia.sentido}}

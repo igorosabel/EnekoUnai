@@ -1,5 +1,4 @@
-import { NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatSliderModule } from '@angular/material/slider';
@@ -9,16 +8,10 @@ import HeaderComponent from '@shared/components/header/header.component';
   selector: 'app-koloreak',
   templateUrl: './koloreak.component.html',
   styleUrls: ['./koloreak.component.scss'],
-  imports: [
-    NgStyle,
-    FormsModule,
-    HeaderComponent,
-    MatCardModule,
-    MatSliderModule,
-  ],
+  imports: [FormsModule, HeaderComponent, MatCardModule, MatSliderModule],
 })
 export default class KoloreakComponent {
-  colorR: number = 0;
-  colorG: number = 0;
-  colorB: number = 0;
+  colorR: WritableSignal<number> = signal<number>(0);
+  colorG: WritableSignal<number> = signal<number>(0);
+  colorB: WritableSignal<number> = signal<number>(0);
 }

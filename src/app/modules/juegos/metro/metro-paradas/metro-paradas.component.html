@@ -1,14 +1,15 @@
 <app-header [leftUrl]="[`/juegos/metro/${ciudad()}`]"
             leftTitle="Metro"
             leftIcon="arrow_back"
-            [title]="title" />
+            [title]="title()" />
 
 <mat-card class="card-center">
-    @for (parada of paradas; track parada) {
+    @for (parada of paradas(); track parada) {
     <button mat-flat-button
             class="parada-button"
-            [routerLink]="`/juegos/metro/${ciudad()}/linea/${num()}/parada/${parada.id}`">
-        {{parada.nombre}}
+            [routerLink]="`/juegos/metro/${ciudad()}/linea/${num()}/parada/${parada.id}`"
+            [style]="{'background-color': parada.correspondencia.length > 1 ? '#005cbb' : `#${linea()!.color}`}">
+        {{ parada.nombre }}
     </button>
     }
 </mat-card>

@@ -1,21 +1,21 @@
 <app-header [leftUrl]="['/juegos/metro']"
             leftTitle="Metro"
             leftIcon="arrow_back"
-            [title]="title" />
+            [title]="title()" />
 
 <mat-card class="card-center">
-    @for (linea of lineas; track linea) {
+    @for (linea of lineas(); track linea) {
     <button mat-flat-button
             class="metro-button"
-            [ngStyle]="{'background-color': '#'+linea.color, 'color': '#'+linea.colorTexto}"
+            [style]="{'background-color': '#'+linea.color, 'color': '#'+linea.colorTexto}"
             [routerLink]="`/juegos/metro/${ciudad()}/linea/${linea.num}`">
-        Línea {{linea.num}}
+        Línea {{ linea.num }}
         <br>
         @if (linea.fin !== null) {
-        {{linea.inicio}} <br> {{linea.fin}}
+        {{ linea.inicio }} <br> {{ linea.fin }}
         }
         @else {
-        {{linea.inicio}}
+        {{ linea.inicio }}
         }
     </button>
     }
