@@ -103,7 +103,7 @@ export const METRO_DATA = {
       {
         id: 17,
         nombre: 'Unibertsitatea',
-        correspondencia: [2],
+        correspondencia: [1],
       },
       {
         id: 18,
