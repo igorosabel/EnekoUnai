@@ -16,7 +16,7 @@ export const METRO_DATA = {
         fin: 'Salburua',
         color: '529d26',
         colorTexto: 'ffffff',
-        paradas: [18, 19, 20, 21, 23, 23, 9, 10, 11, 12, 13, 14, 15, 24, 25, 26, 27, 28],
+        paradas: [18, 19, 20, 21, 22, 23, 9, 10, 11, 12, 13, 14, 15, 24, 25, 26, 27, 28],
       },
     ],
     paradas: [
