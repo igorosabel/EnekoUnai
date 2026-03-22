@@ -15,7 +15,7 @@
 					class="big-button"
 					[disabled]="memoryOption.people.length < level.num"
 					(click)="selectLevel(memoryOption, level)">
-				<img src="/memory/{{ level.icon }}.png"
+				<img [src]="`/memory/${level.icon}.png`"
 					 [alt]="level.name">
 				<br>
 				{{ level.name }}

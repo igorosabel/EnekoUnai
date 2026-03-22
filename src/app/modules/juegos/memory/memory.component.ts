@@ -1,11 +1,20 @@
-import { Component, computed, inject, Signal, signal, WritableSignal } from '@angular/core';
+import {
+  Component,
+  computed,
+  inject,
+  OnDestroy,
+  Signal,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MemoryLevel, MemoryOption, MemoryPerson } from '@interfaces/memory.interfaces';
 import MemoryCard from '@model/memory-card.class';
+import memoryOptionsData from '@modules/juegos/memory/memory-options.data';
 import { DialogService } from '@osumi/angular-tools';
+import FireworksService from '@services/fireworks.service';
 import HeaderComponent from '@shared/components/header/header.component';
-import memoryOptionsData from './memory-options.data';
 
 @Component({
   selector: 'app-memory',
@@ -13,8 +22,9 @@ import memoryOptionsData from './memory-options.data';
   styleUrls: ['./memory.component.scss'],
   imports: [HeaderComponent, MatCardModule, MatButtonModule],
 })
-export default class MemoryComponent {
+export default class MemoryComponent implements OnDestroy {
   private readonly dialog: DialogService = inject(DialogService);
+  private readonly fireworks: FireworksService = inject(FireworksService);
 
   readonly levels: MemoryLevel[] = [
     { id: 0, name: 'Fácil', num: 2, icon: 'easy' },
@@ -53,6 +63,7 @@ export default class MemoryComponent {
   private timer: number | null = null;
 
   selectLevel(memoryOption: MemoryOption, level: MemoryLevel): void {
+    this.fireworks.stop();
     if (memoryOption.people.length < level.num) {
       this.dialog
         .alert({
@@ -98,8 +109,14 @@ export default class MemoryComponent {
       this.selectedCard.done = true;
       this.selectedSecondCard.done = true;
 
-      this.checkWin();
+      const allDone: boolean = this.hasWon();
+
       this.cardsDone();
+
+      if (allDone === true) {
+        this.startWinSequence();
+      }
+
       return;
     }
 
@@ -182,12 +199,17 @@ export default class MemoryComponent {
     this._selectedOption.set(null);
   }
 
-  private checkWin(): void {
-    const allDone: boolean =
+  private hasWon(): boolean {
+    return (
       this._cards().length > 0 &&
-      this._cards().every((card: MemoryCard): boolean => card.done === true);
+      this._cards().every((card: MemoryCard): boolean => card.done === true)
+    );
+  }
 
-    if (allDone === true) {
+  private startWinSequence(): void {
+    this.blocked = true;
+
+    this.fireworks.play(3500).then((): void => {
       this.dialog
         .alert({
           title: 'Amaiera',
@@ -197,6 +219,11 @@ export default class MemoryComponent {
         .subscribe((): void => {
           this.resetGame();
         });
-    }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.clearPendingTimer();
+    this.fireworks.stop();
   }
 }

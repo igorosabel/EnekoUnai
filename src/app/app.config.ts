@@ -11,6 +11,7 @@ import {
   withViewTransitions,
 } from '@angular/router';
 import routes from '@app/app.routes';
+import provideCore from '@modules/core';
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'top',
@@ -23,9 +24,10 @@ export const appConfig: ApplicationConfig = {
       routes,
       withViewTransitions(),
       withInMemoryScrolling(scrollConfig),
-      withComponentInputBinding()
+      withComponentInputBinding(),
     ),
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
+    provideCore(),
   ],
 };

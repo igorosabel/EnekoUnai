@@ -1,0 +1,18 @@
+@if (active() === true) {
+<div class="fireworks-overlay"
+     aria-hidden="true">
+    @for (particle of particles(); track particle.id) {
+    <span class="firework-particle"
+          [style.left.%]="particle.originX"
+          [style.top.%]="particle.originY"
+          [style.width.px]="particle.size"
+          [style.height.px]="particle.size"
+          [style.background]="particle.color"
+          [style.color]="particle.color"
+          [style.animation-delay.ms]="particle.delay"
+          [style.animation-duration.ms]="particle.duration"
+          [style.--dx]="particle.dx + 'px'"
+          [style.--dy]="particle.dy + 'px'"></span>
+    }
+</div>
+}
