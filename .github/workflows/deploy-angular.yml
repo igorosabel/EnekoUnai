@@ -7,6 +7,7 @@ on:
 
 env:
   BUILD_DIR: dist/browser
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
 jobs:
   build-and-deploy:
@@ -17,19 +18,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
-
-      - name: Cache npm
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: npm-
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
@@ -57,7 +52,7 @@ jobs:
           target: '~/deploy_tmp'
 
       - name: Deploy on server (clean & extract)
-        uses: appleboy/ssh-action@v1.1.0
+        uses: appleboy/ssh-action@v1.2.5
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
@@ -70,30 +65,40 @@ jobs:
 
             # Validaciones de seguridad
             if [ ! -f "$TAR" ]; then
-              echo "ERROR: No se encontró el artefacto $TAR" >&2; exit 1
+              echo "ERROR: No se encontró el artefacto $TAR" >&2
+              exit 1
             fi
+
             if [ ! -d "$DEST" ]; then
-              echo "ERROR: El destino $DEST no existe" >&2; exit 1
+              echo "ERROR: El destino $DEST no existe" >&2
+              exit 1
             fi
+
             case "$DEST" in
-              /|/root|/home|/var|/var/www|/var/www/vhosts) echo "ERROR: Destino demasiado genérico. Abortando." >&2; exit 1 ;;
+              /|/root|/home|/var|/var/www|/var/www/vhosts)
+                echo "ERROR: Destino demasiado genérico. Abortando." >&2
+                exit 1
+                ;;
             esac
 
-            # Extrae en carpeta temporal y valida index.html ANTES de borrar
+            # Extraer en carpeta temporal y validar antes de borrar el destino actual
             TMP_DIR=$(mktemp -d)
             tar -xzf "$TAR" -C "$TMP_DIR"
+
             if [ ! -f "$TMP_DIR/index.html" ]; then
               echo "ERROR: index.html no encontrado en el artefacto. Abortando." >&2
               rm -rf "$TMP_DIR"
               exit 1
             fi
 
-            # Borrar contenido actual (solo nivel superior de la carpeta pública)
+            # Limpiar contenido actual
             cd "$DEST"
             find . -mindepth 1 -maxdepth 1 -exec rm -rf {} +
 
             # Publicar nuevo build
             cp -r "$TMP_DIR"/* "$DEST"/
+
+            # Limpieza final
             rm -rf "$TMP_DIR" "$TAR"
 
             echo "Despliegue completado en $DEST"
