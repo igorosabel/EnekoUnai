@@ -4,3 +4,14 @@ export interface MemoryLevel {
   num: number;
   icon: string;
 }
+
+export interface MemoryPerson {
+  name: string;
+  img: string;
+}
+
+export interface MemoryOption {
+  id: string;
+  option: string;
+  people: MemoryPerson[];
+}

@@ -1,3 +1,18 @@
+.memory-select {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	.memory-select-col {
+		display: flex;
+		flex-direction: column;
+
+		h1 {
+			text-align: center;
+		}
+	}
+}
+
 .card-list {
 	display: grid !important;
 	align-items: center;
@@ -77,6 +92,10 @@
 }
 
 @media screen and (min-width: 900px) {
+	.memory-select {
+		flex-direction: row;
+	}
+
 	.card-list-2 {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-template-rows: 1fr;

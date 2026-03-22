@@ -1,10 +1,17 @@
 export default class MemoryCard {
-  public reveal: boolean = false;
-  public done: boolean = false;
+  cardId: number;
+  personId: number;
+  name: string;
+  img: string;
+  reveal: boolean;
+  done: boolean;
 
-  constructor(
-    public id: number | null = null,
-    public idPerson: number | null = null,
-    public name: string | null = null
-  ) {}
+  constructor(cardId: number, personId: number, name: string, img: string) {
+    this.cardId = cardId;
+    this.personId = personId;
+    this.name = name;
+    this.img = img;
+    this.reveal = false;
+    this.done = false;
+  }
 }

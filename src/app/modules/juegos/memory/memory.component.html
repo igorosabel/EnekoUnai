@@ -3,31 +3,43 @@
 			leftIcon="arrow_back"
 			title="Memory" />
 
-@if (selectedLevel === null) {
+@if (selectedLevel() === null) {
 <mat-card class="card-center">
-	@for (level of levels; track level.id) {
-	<button mat-flat-button
-			class="big-button"
-			(click)="selectLevel(level)">
-		<img src="/memory/{{level.icon}}.png"
-			 [alt]="level.name">
-		<br>
-		{{level.name}}
-	</button>
-	}
+	<div class="memory-select">
+		@for (memoryOption of memoryOptions; track memoryOption.id) {
+		<div class="memory-select-col">
+			<h1>{{ memoryOption.option }}</h1>
+
+			@for (level of levels; track level.id) {
+			<button mat-flat-button
+					class="big-button"
+					[disabled]="memoryOption.people.length < level.num"
+					(click)="selectLevel(memoryOption, level)">
+				<img src="/memory/{{ level.icon }}.png"
+					 [alt]="level.name">
+				<br>
+				{{ level.name }}
+			</button>
+			}
+		</div>
+		}
+	</div>
 </mat-card>
 }
 
-@if (selectedLevel !== null) {
-<mat-card class="card-center card-list {{'card-list-'+selectedLevel.num}}">
-	@for (card of cards; track $index) {
+@if (selectedLevel() !== null) {
+<mat-card [class]="boardClass()">
+	@for (card of cards(); track card.cardId) {
 	<div class="card"
 		 (click)="show(card)">
 		<div class="card-hidden"
-			 [class]="{'hidden': card.reveal}">?</div>
+			 [class.hidden]="card.reveal === true">
+			?
+		</div>
+
 		<div class="card-reveal"
-			 [class]="{'hidden': !card.reveal}">
-			<img [src]="'/memory/img/' + card.id + '.png'"
+			 [class.hidden]="card.reveal === false">
+			<img [src]="card.img"
 				 [alt]="card.name">
 		</div>
 	</div>
