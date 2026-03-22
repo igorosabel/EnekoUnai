@@ -28,7 +28,7 @@ const memoryOptions: MemoryOption[] = [
       { name: 'Ander Xabier', img: '/txartelak/eneko/ander-xabier.webp' },
       { name: 'Aratz', img: '/txartelak/eneko/aratz.webp' },
       { name: 'Arya', img: '/txartelak/eneko/arya.webp' },
-      { name: 'Beñat', img: '/txartelak/eneko/beñat.webp' },
+      { name: 'Beñat', img: '/txartelak/eneko/benat.webp' },
       { name: 'Eider', img: '/txartelak/eneko/eider.webp' },
       { name: 'Eneko', img: '/txartelak/eneko/eneko.webp' },
       { name: 'Enetz', img: '/txartelak/eneko/enetz.webp' },
