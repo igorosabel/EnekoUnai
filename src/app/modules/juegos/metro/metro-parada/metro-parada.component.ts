@@ -44,7 +44,7 @@ export default class MetroParadaComponent implements OnInit {
     this.paradaSelected = this.metroData[this.ciudad()].paradas.find(
       (x: MetroParadaInterface): boolean => {
         return x.id === this.parada();
-      }
+      },
     );
     if (this.paradaSelected !== undefined) {
       this.title = this.paradaSelected.nombre;
@@ -53,7 +53,7 @@ export default class MetroParadaComponent implements OnInit {
         const linea: MetroLineaInterface | undefined = this.metroData[this.ciudad()].lineas.find(
           (x: MetroLineaInterface): boolean => {
             return x.num === correspondenciaNum;
-          }
+          },
         );
 
         if (linea !== undefined && this.parada() !== linea.paradas[0]) {
@@ -82,13 +82,13 @@ export default class MetroParadaComponent implements OnInit {
 
     this.correspondenciasInicio.sort(function (
       a: MetroParadaDetalleInterface,
-      b: MetroParadaDetalleInterface
+      b: MetroParadaDetalleInterface,
     ): number {
       return a.minutos - b.minutos;
     });
     this.correspondenciasFin.sort(function (
       a: MetroParadaDetalleInterface,
-      b: MetroParadaDetalleInterface
+      b: MetroParadaDetalleInterface,
     ): number {
       return a.minutos - b.minutos;
     });

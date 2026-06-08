@@ -1,8 +1,4 @@
-import {
-  ApplicationConfig,
-  provideBrowserGlobalErrorListeners,
-  provideZonelessChangeDetection,
-} from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import {
   InMemoryScrollingOptions,
   provideRouter,
@@ -27,7 +23,6 @@ export const appConfig: ApplicationConfig = {
       withComponentInputBinding(),
     ),
     provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection(),
     provideCore(),
   ],
 };

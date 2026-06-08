@@ -1,10 +1,4 @@
-import {
-  Component,
-  input,
-  InputSignal,
-  output,
-  OutputEmitterRef,
-} from '@angular/core';
+import { Component, input, InputSignal, output, OutputEmitterRef } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { TxartelaInterface } from '@interfaces/txartelak.interfaces';
@@ -16,8 +10,7 @@ import { TxartelaInterface } from '@interfaces/txartelak.interfaces';
   styleUrl: './txartela.component.scss',
 })
 export default class TxartelaComponent {
-  txartela: InputSignal<TxartelaInterface> =
-    input.required<TxartelaInterface>();
+  txartela: InputSignal<TxartelaInterface> = input.required<TxartelaInterface>();
   ezabatu: InputSignal<boolean> = input.required<boolean>();
   kendu: OutputEmitterRef<number> = output<number>();
 

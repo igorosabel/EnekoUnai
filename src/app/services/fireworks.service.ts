@@ -1,9 +1,7 @@
-import { Injectable, Signal, WritableSignal, signal } from '@angular/core';
+import { Service, Signal, WritableSignal, signal } from '@angular/core';
 import { FireworkParticle } from '@interfaces/firework-particle.interface';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export default class FireworksService {
   private readonly colors: string[] = [
     '#ff00ff',

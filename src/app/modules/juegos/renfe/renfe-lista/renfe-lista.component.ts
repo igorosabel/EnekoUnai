@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import {
-  RenfeLineaInterface,
-  RenfeLineaShowInterface,
-} from '@interfaces/renfe.interfaces';
+import { RenfeLineaInterface, RenfeLineaShowInterface } from '@interfaces/renfe.interfaces';
+import { RENFE_DATA } from '@modules/juegos/renfe/renfe-data';
 import HeaderComponent from '@shared/components/header/header.component';
-import { RENFE_DATA } from '../renfe-data';
 
 @Component({
   selector: 'app-renfe-lista',

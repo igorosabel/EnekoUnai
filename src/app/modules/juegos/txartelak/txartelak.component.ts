@@ -67,7 +67,7 @@ export default class TxartelakComponent {
   bilatuUmea(id: number): UmeaInterface | null {
     for (const klasea of this.umeak) {
       const umeaEncontrado: UmeaInterface | undefined = klasea.umeak.find(
-        (umea: UmeaInterface): boolean => umea.id === id
+        (umea: UmeaInterface): boolean => umea.id === id,
       );
       if (umeaEncontrado) {
         return umeaEncontrado;
@@ -78,10 +78,9 @@ export default class TxartelakComponent {
 
   aldatuTxartela(): void {
     if (this.txartelMota !== -1 && this.umea !== -1) {
-      const txartelMota: TxartelMotaInterface | undefined =
-        this.txartelMotak.find(
-          (x: TxartelMotaInterface): boolean => x.id == this.txartelMota
-        );
+      const txartelMota: TxartelMotaInterface | undefined = this.txartelMotak.find(
+        (x: TxartelMotaInterface): boolean => x.id == this.txartelMota,
+      );
       if (txartelMota) {
         this.txartelBerria.mota = txartelMota;
       }
@@ -106,9 +105,7 @@ export default class TxartelakComponent {
   }
 
   kenduTxartela(id: number): void {
-    const ind: number = this.txartelak.findIndex(
-      (x: TxartelaInterface): boolean => x.id === id
-    );
+    const ind: number = this.txartelak.findIndex((x: TxartelaInterface): boolean => x.id === id);
     this.txartelak.splice(ind, 1);
   }
 }

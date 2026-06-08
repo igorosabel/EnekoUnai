@@ -41,7 +41,7 @@ export default class MetroParadasComponent implements OnInit {
     const findLinea: MetroLineaInterface | undefined = this.metroData[this.ciudad()].lineas.find(
       (x: MetroLineaInterface): boolean => {
         return x.num === this.num();
-      }
+      },
     );
     if (findLinea !== undefined) {
       this.linea.set(findLinea);
@@ -53,7 +53,7 @@ export default class MetroParadasComponent implements OnInit {
         const parada: MetroParadaInterface | undefined = this.metroData[this.ciudad()].paradas.find(
           (x: MetroParadaInterface): boolean => {
             return x.id === num;
-          }
+          },
         );
         if (parada !== undefined) {
           paradas.push(parada);

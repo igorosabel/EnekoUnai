@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  SimonActivated,
-  SimonColor,
-  SimonSounds,
-} from '@interfaces/simon.interfaces';
+import { SimonActivated, SimonColor, SimonSounds } from '@interfaces/simon.interfaces';
 import HeaderComponent from '@shared/components/header/header.component';
 
 @Component({
@@ -58,9 +54,12 @@ export default class SimonComponent {
 
   playRound(nextSequence: SimonColor[]): void {
     nextSequence.forEach((color: SimonColor, index: number): void => {
-      setTimeout((): void => {
-        this.activateTile(color);
-      }, (index + 1) * 600);
+      setTimeout(
+        (): void => {
+          this.activateTile(color);
+        },
+        (index + 1) * 600,
+      );
     });
   }
 
@@ -80,17 +79,19 @@ export default class SimonComponent {
     this.playRound(nextSequence);
 
     this.sequence = [...nextSequence];
-    setTimeout((): void => {
-      this.humanTurn(this.level);
-    }, this.level * 600 + 1000);
+    setTimeout(
+      (): void => {
+        this.humanTurn(this.level);
+      },
+      this.level * 600 + 1000,
+    );
   }
 
   handleClick(tile: SimonColor): void {
     const index: number = this.humanSequence.push(tile) - 1;
     this.sounds[tile]?.play();
 
-    const remainingTaps: number =
-      this.sequence.length - this.humanSequence.length;
+    const remainingTaps: number = this.sequence.length - this.humanSequence.length;
 
     if (this.humanSequence[index] !== this.sequence[index]) {
       this.resetGame('Oops! Game over, you pressed the wrong tile.');
@@ -111,9 +112,7 @@ export default class SimonComponent {
       return;
     }
 
-    this.info = `Your turn: ${remainingTaps} Tap${
-      remainingTaps > 1 ? 's' : ''
-    }`;
+    this.info = `Your turn: ${remainingTaps} Tap${remainingTaps > 1 ? 's' : ''}`;
   }
 
   startGame(): void {
